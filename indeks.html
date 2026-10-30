@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>24-Hour Notion Time-Blocking Tracker</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            notion: {
+              bg: '#FFFFFF',
+              darkBg: '#191919',
+              card: '#F7F7F7',
+              darkCard: '#202020',
+              border: '#E9E9E9',
+              darkBorder: '#2F2F2F',
+              text: '#37352F',
+              darkText: '#D4D4D4',
+              sub: '#787774',
+              darkSub: '#9B9B9B',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Custom scrollbar for Notion aesthetic */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(120, 119, 116, 0.2);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(120, 119, 116, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-notion-bg text-notion-text dark:bg-notion-darkBg dark:text-notion-darkText min-h-screen p-3 md:p-6 transition-colors duration-200">
+
+  <!-- Main Notion Container -->
+  <div class="max-w-4xl mx-auto space-y-6">
+
+    <!-- Header Section -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-notion-border dark:border-notion-darkBorder">
+      <div>
+        <div class="flex items-center gap-2 mb-1">
+          <span class="text-2xl">⚡</span>
+          <h1 class="text-xl md:text-2xl font-bold tracking-tight text-notion-text dark:text-notion-darkText" id="app-title">
+            24-Hour Time-Blocker
+          </h1>
+        </div>
+        <p class="text-xs md:text-sm text-notion-sub dark:text-notion-darkSub" id="app-subtitle">
+          Sunnah-inspired & professional daily productivity tracker for Notion.
+        </p>
+      </div>
+
+      <!-- Action Controls -->
+      <div class="flex flex-wrap items-center gap-2">
+        <!-- Language Switcher -->
+        <button id="lang-btn" onclick="toggleLanguage()" class="px-3 py-1.5 text-xs font-medium rounded-md border border-notion-border dark:border-notion-darkBorder bg-notion-card dark:bg-notion-darkCard hover:bg-gray-200 dark:hover:bg-neutral-800 transition flex items-center gap-1.5">
+          <i data-lucide="globe" class="w-3.5 h-3.5"></i>
+          <span id="lang-label">EN / ID</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button id="theme-btn" onclick="toggleTheme()" class="px-3 py-1.5 text-xs font-medium rounded-md border border-notion-border dark:border-notion-darkBorder bg-notion-card dark:bg-notion-darkCard hover:bg-gray-200 dark:hover:bg-neutral-800 transition flex items-center gap-1.5">
+          <i data-lucide="sun" class="w-3.5 h-3.5 dark:hidden"></i>
+          <i data-lucide="moon" class="w-3.5 h-3.5 hidden dark:block"></i>
+          <span id="theme-label" class="hidden sm:inline">Theme</span>
+        </button>
+
+        <!-- Preset Loader -->
+        <button onclick="loadSunnahPreset()" class="px-3 py-1.5 text-xs font-semibold rounded-md bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition flex items-center gap-1.5">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+          <span id="btn-preset">Load Sunnah Routine</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Progress & Analytics Card -->
+    <div class="p-4 rounded-xl border border-notion-border dark:border-notion-darkBorder bg-notion-card dark:bg-notion-darkCard shadow-xs space-y-3">
+      <div class="flex items-center justify-between text-xs font-medium text-notion-sub dark:text-notion-darkSub">
+        <span class="flex items-center gap-1.5">
+          <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i>
+          <span id="progress-title">Daily Completion Progress</span>
+        </span>
+        <span id="progress-text" class="font-bold text-notion-text dark:text-notion-darkText">0% (0 / 24 Hours)</span>
+      </div>
+      <!-- Progress Bar -->
+      <div class="w-full h-3 bg-gray-200 dark:bg-neutral-800 rounded-full overflow-hidden">
+        <div id="progress-bar" class="h-full bg-emerald-500 transition-all duration-500 ease-out w-0"></div>
+      </div>
+
+      <!-- Quick Filter & View Toggles -->
+      <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-notion-border dark:border-notion-darkBorder text-xs">
+        <div class="flex items-center gap-1 overflow-x-auto py-1" id="category-filters">
+          <!-- Dynamically Generated Filters -->
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button onclick="clearAllBlocks()" class="text-xs text-rose-500 hover:underline flex items-center gap-1">
+            <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+            <span id="btn-reset">Reset All</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Time Block Modal/Form Toggle -->
+    <div class="flex items-center justify-between">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-notion-sub dark:text-notion-darkSub flex items-center gap-2">
+        <i data-lucide="clock" class="w-4 h-4"></i>
+        <span id="section-schedule">24-Hour Schedule Grid</span>
+      </h2>
+      <button onclick="openAddModal()" class="text-xs font-medium px-2.5 py-1 rounded bg-notion-text text-notion-bg dark:bg-notion-darkText dark:text-notion-darkBg hover:opacity-90 transition flex items-center gap-1">
+        <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+        <span id="btn-add">Add Block</span>
+      </button>
+    </div>
+
+    <!-- Time Blocks Grid List -->
+    <div id="timeline-container" class="space-y-2">
+      <!-- Blocks will be rendered here dynamically -->
+    </div>
+
+  </div>
+
+  <!-- Modal Form for Add/Edit -->
+  <div id="block-modal" class="fixed inset-0 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4 z-50 hidden">
+    <div class="bg-notion-bg dark:bg-notion-darkBg border border-notion-border dark:border-notion-darkBorder rounded-xl max-w-md w-full p-5 space-y-4 shadow-xl">
+      <div class="flex items-center justify-between border-b border-notion-border dark:border-notion-darkBorder pb-3">
+        <h3 id="modal-title" class="font-bold text-base">Add / Edit Time Block</h3>
+        <button onclick="closeModal()" class="text-notion-sub hover:text-notion-text dark:hover:text-notion-darkText">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="block-form" onsubmit="handleFormSubmit(event)" class="space-y-3 text-xs">
+        <input type="hidden" id="form-id">
+
+        <div>
+          <label class="block font-medium mb-1" id="lbl-time-slot">Time Slot (Hour 00:00 - 23:00)</label>
+          <div class="grid grid-cols-2 gap-2">
+            <select id="form-start" class="w-full p-2 rounded border border-notion-border dark:border-notion-darkBorder bg-notion-card dark:bg-notion-darkCard text-notion-text dark:text-notion-darkText">
+              <!-- Options 00:00 to 23:00 -->
+            </select>
+            <select id="form-end" class="w-full p-2 rounded border border-notion-border dark:border-notion-darkBorder bg-notion-card dark:bg-notion-darkCard text-notion-text dark:text-notion-darkText">
+              <!-- Options 01:00 to 24:00 -->
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-medium mb-1" id="lbl-title-en">Activity Title (English)</label>
+          <input type="text" id="form-title-en" required placeholder="e.g. Qiyamul Lail & Tahajjud" class="w-full p-2 rounded border border-notion-border dark:border-notion-darkBorder bg-notion-card dark:bg-notion-darkCard text-notion-text dark:text-notion-darkText">
+        </div>
+
+        <div>
+          <label class="block font-medium mb-1" id="lbl-title-id">Activity Title (Bahasa Indonesia)</label>
+          <input type="text" id="form-title-id" required placeholder="e.g. Tahajud & Istighfar" class="w-full p-2 rounded border border-notion-border dark:border-notion-darkBorder bg-notion-card dark:bg-notion-darkCard text-notion-text dark:text-notion-darkText">
+        </div>
+
+        <div>
+          <label class="block font-medium mb-1" id="lbl-category">Category</label>
+          <select id="form-category" class="w-full p-2 rounded border border-notion-border dark:border-notion-darkBorder bg-notion-card dark:bg-notion-darkCard text-notion-text dark:text-notion-darkText">
+            <option value="worship">🌙 Worship & Sunnah</option>
+            <option value="work">💼 Deep Work & Office</option>
+            <option value="learning">🚀 Learning & Side Hustle</option>
+            <option value="health">💪 Health & Rest</option>
+            <option value="family">🏡 Personal & Family</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-medium mb-1" id="lbl-note">Notes / Key Objectives</label>
+          <textarea id="form-note" rows="2" placeholder="Sub-tasks, Surah to recite, or office deliverables..." class="w-full p-2 rounded border border-notion-border dark:border-notion-darkBorder bg-notion-card dark:bg-notion-darkCard text-notion-text dark:text-notion-darkText"></textarea>
+        </div>
+
+        <div class="flex justify-end gap-2 pt-2 border-t border-notion-border dark:border-notion-darkBorder">
+          <button type="button" onclick="closeModal()" class="px-3 py-1.5 rounded border border-notion-border dark:border-notion-darkBorder hover:bg-gray-200 dark:hover:bg-neutral-800" id="btn-cancel">Cancel</button>
+          <button type="submit" class="px-3 py-1.5 rounded bg-emerald-600 text-white font-medium hover:bg-emerald-700" id="btn-save">Save Block</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // --- Data State & Config ---
+    let currentLang = localStorage.getItem('notion_tb_lang') || 'en';
+    let currentFilter = 'all';
+
+    const CATEGORIES = {
+      worship: {
+        en: "Worship & Sunnah",
+        id: "Ibadah & Sunnah",
+        colorBg: "bg-emerald-100 dark:bg-emerald-950/50",
+        colorText: "text-emerald-800 dark:text-emerald-300",
+        border: "border-emerald-300 dark:border-emerald-800",
+        badge: "bg-emerald-200 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200",
+        icon: "moon"
+      },
+      work: {
+        en: "Deep Work & Office",
+        id: "Kerja Kantor",
+        colorBg: "bg-blue-100 dark:bg-blue-950/50",
+        colorText: "text-blue-800 dark:text-blue-300",
+        border: "border-blue-300 dark:border-blue-800",
+        badge: "bg-blue-200 dark:bg-blue-900 text-blue-800 dark:text-blue-200",
+        icon: "briefcase"
+      },
+      learning: {
+        en: "Learning & Side Hustle",
+        id: "Belajar & Sampingan",
+        colorBg: "bg-amber-100 dark:bg-amber-950/50",
+        colorText: "text-amber-800 dark:text-amber-300",
+        border: "border-amber-300 dark:border-amber-800",
+        badge: "bg-amber-200 dark:bg-amber-900 text-amber-800 dark:text-amber-200",
+        icon: "sparkles"
+      },
+      health: {
+        en: "Health & Rest",
+        id: "Kesehatan & Istirahat",
+        colorBg: "bg-purple-100 dark:bg-purple-950/50",
+        colorText: "text-purple-800 dark:text-purple-300",
+        border: "border-purple-300 dark:border-purple-800",
+        badge: "bg-purple-200 dark:bg-purple-900 text-purple-800 dark:text-purple-200",
+        icon: "heart"
+      },
+      family: {
+        en: "Personal & Family",
+        id: "Keluarga & Pribadi",
+        colorBg: "bg-rose-100 dark:bg-rose-950/50",
+        colorText: "text-rose-800 dark:text-rose-300",
+        border: "border-rose-300 dark:border-rose-800",
+        badge: "bg-rose-200 dark:bg-rose-900 text-rose-800 dark:text-rose-200",
+        icon: "home"
+      }
+    };
+
+    // Default Sunnah & Professional Preset Routine
+    const SUNNAH_PRESET = [
+      { id: '1', start: 3, end: 4, titleEn: 'Qiyamul Lail, Suhoor & Istighfar', titleId: 'Tahajud, Sahur & Istighfar', category: 'worship', note: 'Pray Tahajjud, make dua before Fajr', completed: false },
+      { id: '2', start: 4, end: 5, titleEn: 'Fajr Prayer & Morning Adhkar', titleId: 'Shalat Subuh & Dzikir Pagi', category: 'worship', note: 'Pray Fajr in congregation & recite morning dhikr', completed: false },
+      { id: '3', start: 5, end: 6, titleEn: 'Morning Exercise & Shower', titleId: 'Olahraga Pagi & Mandi', category: 'health', note: 'Light cardio / stretching & prep for day', completed: false },
+      { id: '4', start: 6, end: 7, titleEn: 'Commute & Language Practice', titleId: 'Perjalanan & Belajar Bahasa', category: 'learning', note: 'Listen to vocabulary drills / podcasts during commute', completed: false },
+      { id: '5', start: 7, end: 8, titleEn: 'Workplace Prep & Planning', titleId: 'Persiapan Kerja & Skala Prioritas', category: 'work', note: 'Arrive early, review daily priorities', completed: false },
+      { id: '6', start: 8, end: 10, titleEn: 'Deep Work Session 1', titleId: 'Kerja Fokus Sesi 1', category: 'work', note: 'High priority office tasks without distraction', completed: false },
+      { id: '7', start: 10, end: 11, titleEn: 'Morning Break & Duha Prayer', titleId: 'Istirahat & Shalat Dhuha', category: 'worship', note: '2-8 rakat Duha prayer & coffee break', completed: false },
+      { id: '8', start: 11, end: 12, titleEn: 'Deep Work Session 2', titleId: 'Kerja Fokus Sesi 2', category: 'work', note: 'Secondary office tasks, emails & meetings', completed: false },
+      { id: '9', start: 12, end: 13, titleEn: 'Dhuhr Prayer, Lunch & Qailulah Nap', titleId: 'Dzuhur, Makan Siang & Qailulah', category: 'health', note: '15-20 mins power nap sunnah for mid-day energy', completed: false },
+      { id: '10', start: 13, end: 15, titleEn: 'Office Admin & Collaboration', titleId: 'Kerja Administrasi & Rapat Tim', category: 'work', note: 'Meetings, team sync & execution', completed: false },
+      { id: '11', start: 15, end: 16, titleEn: 'Asr Prayer & Evening Adhkar', titleId: 'Shalat Ashar & Dzikir Petang', category: 'worship', note: 'Pray Asr on time & read evening adhkar', completed: false },
+      { id: '12', start: 16, end: 18, titleEn: 'Wrap-up & Commute Home', titleId: 'Selesai Kerja & Perjalanan Pulang', category: 'health', note: 'Review daily checklist before leaving office', completed: false },
+      { id: '13', start: 18, end: 19, titleEn: 'Maghrib, Tilawah & Family Dinner', titleId: 'Maghrib, Tilawah & Makan Malam', category: 'family', note: 'Read 1 page Al-Quran & quality family time', completed: false },
+      { id: '14', start: 19, end: 20, titleEn: 'Isha Prayer & Night Prep', titleId: 'Shalat Isya & Persiapan Sesi Malam', category: 'worship', note: 'Pray Isha in congregation', completed: false },
+      { id: '15', start: 20, end: 21, titleEn: 'Content Creation / Side Hustle', titleId: 'Bikin Konten / Proyek Sampingan', category: 'learning', note: 'Scriptwriting, video editing, or freelance projects', completed: false },
+      { id: '16', start: 21, end: 22, titleEn: 'Sunnah Night Routine & Sleep', titleId: 'Adab Tidur Sunnah & Istirahat', category: 'health', note: 'Wudu, Surah Al-Mulk, sleep on right side by 21:30', completed: false },
+    ];
+
+    let timeBlocks = JSON.parse(localStorage.getItem('notion_tb_blocks')) || SUNNAH_PRESET;
+
+    // --- Initialization ---
+    window.onload = function() {
+      initTheme();
+      populateTimeDropdowns();
+      renderCategoryFilters();
+      renderTimeline();
+      updateLanguageTexts();
+      lucide.createIcons();
+    };
+
+    // --- Theme Management ---
+    function initTheme() {
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+
+    function toggleTheme() {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    // --- Language Management ---
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'id' : 'en';
+      localStorage.setItem('notion_tb_lang', currentLang);
+      updateLanguageTexts();
+      renderCategoryFilters();
+      renderTimeline();
+    }
+
+    function updateLanguageTexts() {
+      const isEn = currentLang === 'en';
+      document.getElementById('app-title').textContent = isEn ? "24-Hour Time-Blocker" : "24-Jam Time-Blocker";
+      document.getElementById('app-subtitle').textContent = isEn ? "Sunnah-inspired & professional daily productivity tracker for Notion." : "Jadwal harian berbasis sunnah & produktivitas profesional untuk Notion.";
+      document.getElementById('btn-preset').textContent = isEn ? "Load Sunnah Routine" : "Muat Rutinitas Sunnah";
+      document.getElementById('progress-title').textContent = isEn ? "Daily Completion Progress" : "Kemajuan Progres Harian";
+      document.getElementById('section-schedule').textContent = isEn ? "24-Hour Schedule Grid" : "Jadwal 24 Jam";
+      document.getElementById('btn-add').textContent = isEn ? "Add Block" : "Tambah Blok";
+      document.getElementById('btn-reset').textContent = isEn ? "Reset All" : "Reset Semua";
+
+      // Modal
+      document.getElementById('lbl-time-slot').textContent = isEn ? "Time Slot (Hour 00:00 - 24:00)" : "Slot Waktu (Jam 00:00 - 24:00)";
+      document.getElementById('lbl-title-en').textContent = isEn ? "Activity Title (English)" : "Judul Aktivitas (Bahasa Inggris)";
+      document.getElementById('lbl-title-id').textContent = isEn ? "Activity Title (Bahasa Indonesia)" : "Judul Aktivitas (Bahasa Indonesia)";
+      document.getElementById('lbl-category').textContent = isEn ? "Category" : "Kategori";
+      document.getElementById('lbl-note').textContent = isEn ? "Notes / Objectives" : "Catatan / Target";
+      document.getElementById('btn-cancel').textContent = isEn ? "Cancel" : "Batal";
+      document.getElementById('btn-save').textContent = isEn ? "Save Block" : "Simpan";
+    }
+
+    // --- Render Logic ---
+    function renderCategoryFilters() {
+      const container = document.getElementById('category-filters');
+      const isEn = currentLang === 'en';
+      
+      let html = `
+        <button onclick="setFilter('all')" class="px-2.5 py-1 rounded-md transition ${currentFilter === 'all' ? 'bg-notion-text text-notion-bg dark:bg-notion-darkText dark:text-notion-darkBg font-semibold' : 'bg-notion-bg dark:bg-notion-darkBg border border-notion-border dark:border-notion-darkBorder text-notion-sub'}">
+          ${isEn ? 'All Categories' : 'Semua'}
+        </button>
+      `;
+
+      Object.keys(CATEGORIES).forEach(catKey => {
+        const cat = CATEGORIES[catKey];
+        const isActive = currentFilter === catKey;
+        html += `
+          <button onclick="setFilter('${catKey}')" class="px-2.5 py-1 rounded-md border text-xs font-medium transition flex items-center gap-1 ${isActive ? cat.badge + ' border-transparent' : 'bg-notion-bg dark:bg-notion-darkBg border-notion-border dark:border-notion-darkBorder text-notion-sub'}">
+            <span>${cat[currentLang]}</span>
+          </button>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function setFilter(category) {
+      currentFilter = category;
+      renderCategoryFilters();
+      renderTimeline();
+    }
+
+    function renderTimeline() {
+      const container = document.getElementById('timeline-container');
+      container.innerHTML = '';
+
+      // Sort blocks by start time
+      let sortedBlocks = [...timeBlocks].sort((a, b) => a.start - b.start);
+
+      if (currentFilter !== 'all') {
+        sortedBlocks = sortedBlocks.filter(b => b.category === currentFilter);
+      }
+
+      if (sortedBlocks.length === 0) {
+        container.innerHTML = `
+          <div class="p-8 text-center text-notion-sub dark:text-notion-darkSub border border-dashed border-notion-border dark:border-notion-darkBorder rounded-xl">
+            <i data-lucide="calendar-x" class="w-8 h-8 mx-auto mb-2 opacity-50"></i>
+            <p>${currentLang === 'en' ? 'No time blocks found for this category.' : 'Tidak ada blok waktu untuk kategori ini.'}</p>
+          </div>
+        `;
+        updateProgressBar();
+        lucide.createIcons();
+        return;
+      }
+
+      const currentHour = new Date().getHours();
+
+      sortedBlocks.forEach(block => {
+        const cat = CATEGORIES[block.category] || CATEGORIES.work;
+        const isEn = currentLang === 'en';
+        const title = isEn ? block.titleEn : block.titleId;
+        const isCurrentHour = currentHour >= block.start && currentHour < block.end;
+
+        const timeString = `${formatHour(block.start)} - ${formatHour(block.end)}`;
+        const duration = block.end - block.start;
+
+        const card = document.createElement('div');
+        card.className = `p-3.5 rounded-xl border transition-all flex flex-col md:flex-row md:items-center justify-between gap-3 ${
+          block.completed 
+            ? 'opacity-65 bg-gray-50 dark:bg-neutral-900 border-notion-border dark:border-notion-darkBorder' 
+            : isCurrentHour 
+            ? 'ring-2 ring-emerald-500/50 ' + cat.colorBg + ' ' + cat.border
+            : 'bg-notion-card dark:bg-notion-darkCard border-notion-border dark:border-notion-darkBorder hover:border-gray-300 dark:hover:border-neutral-700'
+        }`;
+
+        card.innerHTML = `
+          <div class="flex items-start gap-3 flex-1 min-w-0">
+            <!-- Checkbox Toggle -->
+            <button onclick="toggleComplete('${block.id}')" class="mt-0.5 flex-shrink-0 w-5 h-5 rounded border border-gray-400 dark:border-neutral-600 flex items-center justify-center ${block.completed ? 'bg-emerald-600 border-emerald-600 text-white' : 'hover:border-emerald-500'} transition">
+              ${block.completed ? '<i data-lucide="check" class="w-3.5 h-3.5"></i>' : ''}
+            </button>
+
+            <!-- Details -->
+            <div class="space-y-1 min-w-0 flex-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-gray-200 dark:bg-neutral-800 text-notion-text dark:text-notion-darkText">
+                  ${timeString} (${duration}h)
+                </span>
+                
+                <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full ${cat.badge} flex items-center gap-1">
+                  <i data-lucide="${cat.icon}" class="w-3 h-3"></i>
+                  ${cat[currentLang]}
+                </span>
+
+                ${isCurrentHour ? `<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500 text-white animate-pulse">NOW</span>` : ''}
+              </div>
+
+              <h3 class="font-semibold text-sm ${block.completed ? 'line-through text-notion-sub dark:text-notion-darkSub' : ''}">
+                ${title}
+              </h3>
+
+              ${block.note ? `<p class="text-xs text-notion-sub dark:text-notion-darkSub line-clamp-2">${block.note}</p>` : ''}
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="flex items-center gap-1 self-end md:self-center border-t md:border-t-0 pt-2 md:pt-0 border-notion-border dark:border-notion-darkBorder">
+            <button onclick="openEditModal('${block.id}')" class="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-neutral-800 text-notion-sub transition">
+              <i data-lucide="pencil" class="w-3.5 h-3.5"></i>
+            </button>
+            <button onclick="deleteBlock('${block.id}')" class="p-1.5 rounded hover:bg-rose-100 dark:hover:bg-rose-950/50 text-rose-500 transition">
+              <i data-lucide="trash" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+
+      updateProgressBar();
+      lucide.createIcons();
+    }
+
+    function formatHour(h) {
+      const padded = h < 10 ? '0' + h : h;
+      return `${padded}:00`;
+    }
+
+    function updateProgressBar() {
+      const completedHours = timeBlocks.filter(b => b.completed).reduce((sum, b) => sum + (b.end - b.start), 0);
+      const percentage = Math.min(Math.round((completedHours / 24) * 100), 100);
+
+      const bar = document.getElementById('progress-bar');
+      const text = document.getElementById('progress-text');
+
+      bar.style.width = `${percentage}%`;
+      text.textContent = `${percentage}% (${completedHours} / 24 ${currentLang === 'en' ? 'Hours' : 'Jam'})`;
+    }
+
+    // --- State Operations ---
+    function toggleComplete(id) {
+      timeBlocks = timeBlocks.map(b => b.id === id ? { ...b, completed: !b.completed } : b);
+      saveAndRender();
+    }
+
+    function deleteBlock(id) {
+      if (confirm(currentLang === 'en' ? 'Are you sure you want to delete this block?' : 'Apakah Anda yakin ingin menghapus blok ini?')) {
+        timeBlocks = timeBlocks.filter(b => b.id !== id);
+        saveAndRender();
+      }
+    }
+
+    function clearAllBlocks() {
+      if (confirm(currentLang === 'en' ? 'Clear all time blocks?' : 'Hapus semua jadwal?')) {
+        timeBlocks = [];
+        saveAndRender();
+      }
+    }
+
+    function loadSunnahPreset() {
+      if (confirm(currentLang === 'en' ? 'Replace current schedule with Sunnah & Work routine?' : 'Ganti jadwal saat ini dengan Rutinitas Sunnah & Kerja?')) {
+        timeBlocks = [...SUNNAH_PRESET];
+        saveAndRender();
+      }
+    }
+
+    function saveAndRender() {
+      localStorage.setItem('notion_tb_blocks', JSON.stringify(timeBlocks));
+      renderTimeline();
+    }
+
+    // --- Modal & Form Handling ---
+    function populateTimeDropdowns() {
+      const startSelect = document.getElementById('form-start');
+      const endSelect = document.getElementById('form-end');
+      startSelect.innerHTML = '';
+      endSelect.innerHTML = '';
+
+      for (let i = 0; i < 24; i++) {
+        startSelect.innerHTML += `<option value="${i}">${formatHour(i)}</option>`;
+      }
+      for (let i = 1; i <= 24; i++) {
+        endSelect.innerHTML += `<option value="${i}">${formatHour(i)}</option>`;
+      }
+    }
+
+    function openAddModal() {
+      document.getElementById('modal-title').textContent = currentLang === 'en' ? 'Add Time Block' : 'Tambah Blok Waktu';
+      document.getElementById('form-id').value = '';
+      document.getElementById('form-start').value = '8';
+      document.getElementById('form-end').value = '9';
+      document.getElementById('form-title-en').value = '';
+      document.getElementById('form-title-id').value = '';
+      document.getElementById('form-category').value = 'work';
+      document.getElementById('form-note').value = '';
+      document.getElementById('block-modal').classList.remove('hidden');
+    }
+
+    function openEditModal(id) {
+      const block = timeBlocks.find(b => b.id === id);
+      if (!block) return;
+
+      document.getElementById('modal-title').textContent = currentLang === 'en' ? 'Edit Time Block' : 'Edit Blok Waktu';
+      document.getElementById('form-id').value = block.id;
+      document.getElementById('form-start').value = block.start;
+      document.getElementById('form-end').value = block.end;
+      document.getElementById('form-title-en').value = block.titleEn;
+      document.getElementById('form-title-id').value = block.titleId;
+      document.getElementById('form-category').value = block.category;
+      document.getElementById('form-note').value = block.note || '';
+      document.getElementById('block-modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('block-modal').classList.add('hidden');
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const id = document.getElementById('form-id').value;
+      const start = parseInt(document.getElementById('form-start').value);
+      const end = parseInt(document.getElementById('form-end').value);
+      const titleEn = document.getElementById('form-title-en').value;
+      const titleId = document.getElementById('form-title-id').value;
+      const category = document.getElementById('form-category').value;
+      const note = document.getElementById('form-note').value;
+
+      if (start >= end) {
+        alert(currentLang === 'en' ? 'End time must be after start time!' : 'Waktu selesai harus setelah waktu mulai!');
+        return;
+      }
+
+      if (id) {
+        // Edit existing
+        timeBlocks = timeBlocks.map(b => b.id === id ? { ...b, start, end, titleEn, titleId, category, note } : b);
+      } else {
+        // Add new
+        const newBlock = {
+          id: Date.now().toString(),
+          start,
+          end,
+          titleEn,
+          titleId,
+          category,
+          note,
+          completed: false
+        };
+        timeBlocks.push(newBlock);
+      }
+
+      closeModal();
+      saveAndRender();
+    }
+  </script>
+</body>
+</html>

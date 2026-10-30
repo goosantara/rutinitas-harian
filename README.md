@@ -1,11 +1,3 @@
-<p align="center">
-  <img src="logo.jpg" alt="Daily Routine Ego Logo" width="220">
-  <h1 align="center">Daily Routine Ego</h1>
-  <p align="center"><i>A Sunnah-Based Professional & Personal Routine Tracker</i></p>
-</p>
-
----
-
 ## 🌙 24-Hour Time-Blocking Routine
 
 | Waktu (Time) | Blok Aktivitas | Detail Rutinitas (Bahasa Indonesia) | Activity Details (English) | Kategori |

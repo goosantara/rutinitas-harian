@@ -1,0 +1,636 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 AppleColorEmoji;}
+{\colortbl;\red255\green255\blue255;\red109\green109\blue109;\red255\green255\blue254;\red251\green0\blue7;
+\red0\green0\blue0;\red42\green42\blue42;\red107\green0\blue1;\red0\green0\blue255;\red15\green112\blue1;
+\red144\green1\blue18;\red9\green60\blue148;\red19\green118\blue70;\red14\green110\blue109;}
+{\*\expandedcolortbl;;\cssrgb\c50196\c50196\c50196;\cssrgb\c100000\c100000\c99608;\cssrgb\c100000\c0\c0;
+\cssrgb\c0\c0\c0;\cssrgb\c21961\c21961\c21961;\cssrgb\c50196\c0\c0;\cssrgb\c0\c0\c100000;\cssrgb\c0\c50196\c0;
+\cssrgb\c63922\c8235\c8235;\cssrgb\c1569\c31765\c64706;\cssrgb\c3529\c52549\c34510;\cssrgb\c0\c50196\c50196;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 <!DOCTYPE\cf4 \strokec4  html\cf2 \strokec2 >\cf0 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \strokec6 <\cf7 \strokec7 html\cf0 \strokec5  \cf4 \strokec4 lang\cf6 \strokec6 =\cf8 \strokec8 "en"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cf6 \cb3 \strokec6 <\cf7 \strokec7 head\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf6 \strokec6 <\cf7 \strokec7 meta\cf0 \strokec5  \cf4 \strokec4 charset\cf6 \strokec6 =\cf8 \strokec8 "UTF-8"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf7 \strokec7 meta\cf0 \strokec5  \cf4 \strokec4 name\cf6 \strokec6 =\cf8 \strokec8 "viewport"\cf0 \strokec5  \cf4 \strokec4 content\cf6 \strokec6 =\cf8 \strokec8 "width=device-width, initial-scale=1.0"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf7 \strokec7 title\cf6 \strokec6 >\cf0 \strokec5 24-Hour Notion Time-Blocking Tracker\cf6 \strokec6 </\cf7 \strokec7 title\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3   \cf9 \strokec9 <!-- Tailwind CSS -->\cf0 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf7 \strokec7 script\cf0 \strokec5  \cf4 \strokec4 src\cf6 \strokec6 =\cf8 \strokec8 "https://cdn.tailwindcss.com"\cf6 \strokec6 ></\cf7 \strokec7 script\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3   \cf9 \strokec9 <!-- Lucide Icons -->\cf0 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf7 \strokec7 script\cf0 \strokec5  \cf4 \strokec4 src\cf6 \strokec6 =\cf8 \strokec8 "https://unpkg.com/lucide@latest"\cf6 \strokec6 ></\cf7 \strokec7 script\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3   \cf9 \strokec9 <!-- Google Fonts Inter -->\cf0 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf7 \strokec7 link\cf0 \strokec5  \cf4 \strokec4 rel\cf6 \strokec6 =\cf8 \strokec8 "preconnect"\cf0 \strokec5  \cf4 \strokec4 href\cf6 \strokec6 =\cf8 \strokec8 "https://fonts.googleapis.com"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf7 \strokec7 link\cf0 \strokec5  \cf4 \strokec4 rel\cf6 \strokec6 =\cf8 \strokec8 "preconnect"\cf0 \strokec5  \cf4 \strokec4 href\cf6 \strokec6 =\cf8 \strokec8 "https://fonts.gstatic.com"\cf0 \strokec5  \cf4 \strokec4 crossorigin\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf7 \strokec7 link\cf0 \strokec5  \cf4 \strokec4 href\cf6 \strokec6 =\cf8 \strokec8 "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"\cf0 \strokec5  \cf4 \strokec4 rel\cf6 \strokec6 =\cf8 \strokec8 "stylesheet"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\cb3   \cf6 \strokec6 <\cf7 \strokec7 script\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3     tailwind.config = \{\cb1 \
+\cb3       darkMode: \cf10 \strokec10 'class'\cf0 \strokec5 ,\cb1 \
+\cb3       theme: \{\cb1 \
+\cb3         extend: \{\cb1 \
+\cb3           fontFamily: \{\cb1 \
+\cb3             sans: [\cf10 \strokec10 'Inter'\cf0 \strokec5 , \cf10 \strokec10 'sans-serif'\cf0 \strokec5 ],\cb1 \
+\cb3           \},\cb1 \
+\cb3           colors: \{\cb1 \
+\cb3             notion: \{\cb1 \
+\cb3               bg: \cf10 \strokec10 '#FFFFFF'\cf0 \strokec5 ,\cb1 \
+\cb3               darkBg: \cf10 \strokec10 '#191919'\cf0 \strokec5 ,\cb1 \
+\cb3               card: \cf10 \strokec10 '#F7F7F7'\cf0 \strokec5 ,\cb1 \
+\cb3               darkCard: \cf10 \strokec10 '#202020'\cf0 \strokec5 ,\cb1 \
+\cb3               border: \cf10 \strokec10 '#E9E9E9'\cf0 \strokec5 ,\cb1 \
+\cb3               darkBorder: \cf10 \strokec10 '#2F2F2F'\cf0 \strokec5 ,\cb1 \
+\cb3               text: \cf10 \strokec10 '#37352F'\cf0 \strokec5 ,\cb1 \
+\cb3               darkText: \cf10 \strokec10 '#D4D4D4'\cf0 \strokec5 ,\cb1 \
+\cb3               sub: \cf10 \strokec10 '#787774'\cf0 \strokec5 ,\cb1 \
+\cb3               darkSub: \cf10 \strokec10 '#9B9B9B'\cf0 \strokec5 ,\cb1 \
+\cb3             \}\cb1 \
+\cb3           \}\cb1 \
+\cb3         \}\cb1 \
+\cb3       \}\cb1 \
+\cb3     \}\cb1 \
+\cb3   \cf6 \strokec6 </\cf7 \strokec7 script\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf7 \strokec7 style\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3     \cf7 \strokec7 body\cf0 \strokec5  \{\cb1 \
+\cb3       \cf4 \strokec4 font-family:\cf0 \strokec5  \cf10 \strokec10 'Inter'\cf0 \strokec5 , \cf11 \strokec11 sans-serif\cf0 \strokec5 ;\cb1 \
+\cb3       \cf4 \strokec4 -webkit-font-smoothing:\cf0 \strokec5  \cf11 \strokec11 antialiased\cf0 \strokec5 ;\cb1 \
+\cb3     \}\cb1 \
+\cb3     \cf9 \strokec9 /* Custom scrollbar for Notion aesthetic */\cf0 \cb1 \strokec5 \
+\cb3     \cf7 \strokec7 ::-webkit-scrollbar\cf0 \strokec5  \{\cb1 \
+\cb3       \cf4 \strokec4 width:\cf0 \strokec5  \cf12 \strokec12 6px\cf0 \strokec5 ;\cb1 \
+\cb3       \cf4 \strokec4 height:\cf0 \strokec5  \cf12 \strokec12 6px\cf0 \strokec5 ;\cb1 \
+\cb3     \}\cb1 \
+\cb3     \cf7 \strokec7 ::-webkit-scrollbar-track\cf0 \strokec5  \{\cb1 \
+\cb3       \cf4 \strokec4 background:\cf0 \strokec5  \cf11 \strokec11 transparent\cf0 \strokec5 ;\cb1 \
+\cb3     \}\cb1 \
+\cb3     \cf7 \strokec7 ::-webkit-scrollbar-thumb\cf0 \strokec5  \{\cb1 \
+\cb3       \cf4 \strokec4 background:\cf0 \strokec5  \cf11 \strokec11 rgba(\cf12 \strokec12 120\cf0 \strokec5 , \cf12 \strokec12 119\cf0 \strokec5 , \cf12 \strokec12 116\cf0 \strokec5 , \cf12 \strokec12 0.2\cf11 \strokec11 )\cf0 \strokec5 ;\cb1 \
+\cb3       \cf4 \strokec4 border-radius:\cf0 \strokec5  \cf12 \strokec12 9999px\cf0 \strokec5 ;\cb1 \
+\cb3     \}\cb1 \
+\cb3     \cf7 \strokec7 ::-webkit-scrollbar-thumb:hover\cf0 \strokec5  \{\cb1 \
+\cb3       \cf4 \strokec4 background:\cf0 \strokec5  \cf11 \strokec11 rgba(\cf12 \strokec12 120\cf0 \strokec5 , \cf12 \strokec12 119\cf0 \strokec5 , \cf12 \strokec12 116\cf0 \strokec5 , \cf12 \strokec12 0.4\cf11 \strokec11 )\cf0 \strokec5 ;\cb1 \
+\cb3     \}\cb1 \
+\cb3   \cf6 \strokec6 </\cf7 \strokec7 style\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \strokec6 </\cf7 \strokec7 head\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cf6 \cb3 \strokec6 <\cf7 \strokec7 body\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "bg-notion-bg text-notion-text dark:bg-notion-darkBg dark:text-notion-darkText min-h-screen p-3 md:p-6 transition-colors duration-200"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3   \cf9 \strokec9 <!-- Main Notion Container -->\cf0 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf7 \strokec7 div\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "max-w-4xl mx-auto space-y-6"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\cb3     \cf9 \strokec9 <!-- Header Section -->\cf0 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf7 \strokec7 div\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-notion-border dark:border-notion-darkBorder"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 div\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "flex items-center gap-2 mb-1"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 span\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "text-2xl"\cf6 \strokec6 >\cf0 \strokec5 \uc0\u9889 \cf6 \strokec6 </\cf7 \strokec7 span\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 h1\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "text-xl md:text-2xl font-bold tracking-tight text-notion-text dark:text-notion-darkText"\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "app-title"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3             24-Hour Time-Blocker\cb1 \
+\cb3           \cf6 \strokec6 </\cf7 \strokec7 h1\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 p\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "text-xs md:text-sm text-notion-sub dark:text-notion-darkSub"\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "app-subtitle"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           Sunnah-inspired & professional daily productivity tracker for Notion.\cb1 \
+\cb3         \cf6 \strokec6 </\cf7 \strokec7 p\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\cb3       \cf9 \strokec9 <!-- Action Controls -->\cf0 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf7 \strokec7 div\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "flex flex-wrap items-center gap-2"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf9 \strokec9 <!-- Language Switcher -->\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 button\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "lang-btn"\cf0 \strokec5  \cf4 \strokec4 onclick\cf6 \strokec6 =\cf8 \strokec8 "toggleLanguage()"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "px-3 py-1.5 text-xs font-medium rounded-md border border-notion-border dark:border-notion-darkBorder bg-notion-card dark:bg-notion-darkCard hover:bg-gray-200 dark:hover:bg-neutral-800 transition flex items-center gap-1.5"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 i\cf0 \strokec5  \cf4 \strokec4 data-lucide\cf6 \strokec6 =\cf8 \strokec8 "globe"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "w-3.5 h-3.5"\cf6 \strokec6 ></\cf7 \strokec7 i\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 span\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "lang-label"\cf6 \strokec6 >\cf0 \strokec5 EN / ID\cf6 \strokec6 </\cf7 \strokec7 span\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf7 \strokec7 button\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\cb3         \cf9 \strokec9 <!-- Theme Toggle -->\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 button\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "theme-btn"\cf0 \strokec5  \cf4 \strokec4 onclick\cf6 \strokec6 =\cf8 \strokec8 "toggleTheme()"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "px-3 py-1.5 text-xs font-medium rounded-md border border-notion-border dark:border-notion-darkBorder bg-notion-card dark:bg-notion-darkCard hover:bg-gray-200 dark:hover:bg-neutral-800 transition flex items-center gap-1.5"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 i\cf0 \strokec5  \cf4 \strokec4 data-lucide\cf6 \strokec6 =\cf8 \strokec8 "sun"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "w-3.5 h-3.5 dark:hidden"\cf6 \strokec6 ></\cf7 \strokec7 i\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 i\cf0 \strokec5  \cf4 \strokec4 data-lucide\cf6 \strokec6 =\cf8 \strokec8 "moon"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "w-3.5 h-3.5 hidden dark:block"\cf6 \strokec6 ></\cf7 \strokec7 i\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 span\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "theme-label"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "hidden sm:inline"\cf6 \strokec6 >\cf0 \strokec5 Theme\cf6 \strokec6 </\cf7 \strokec7 span\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf7 \strokec7 button\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\cb3         \cf9 \strokec9 <!-- Preset Loader -->\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 button\cf0 \strokec5  \cf4 \strokec4 onclick\cf6 \strokec6 =\cf8 \strokec8 "loadSunnahPreset()"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "px-3 py-1.5 text-xs font-semibold rounded-md bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition flex items-center gap-1.5"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 i\cf0 \strokec5  \cf4 \strokec4 data-lucide\cf6 \strokec6 =\cf8 \strokec8 "sparkles"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "w-3.5 h-3.5"\cf6 \strokec6 ></\cf7 \strokec7 i\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 span\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "btn-preset"\cf6 \strokec6 >\cf0 \strokec5 Load Sunnah Routine\cf6 \strokec6 </\cf7 \strokec7 span\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf7 \strokec7 button\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\cb3     \cf9 \strokec9 <!-- Progress & Analytics Card -->\cf0 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf7 \strokec7 div\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "p-4 rounded-xl border border-notion-border dark:border-notion-darkBorder bg-notion-card dark:bg-notion-darkCard shadow-xs space-y-3"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf7 \strokec7 div\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "flex items-center justify-between text-xs font-medium text-notion-sub dark:text-notion-darkSub"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 span\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "flex items-center gap-1.5"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 i\cf0 \strokec5  \cf4 \strokec4 data-lucide\cf6 \strokec6 =\cf8 \strokec8 "check-circle-2"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "w-4 h-4 text-emerald-500"\cf6 \strokec6 ></\cf7 \strokec7 i\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 span\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "progress-title"\cf6 \strokec6 >\cf0 \strokec5 Daily Completion Progress\cf6 \strokec6 </\cf7 \strokec7 span\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf7 \strokec7 span\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 span\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "progress-text"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "font-bold text-notion-text dark:text-notion-darkText"\cf6 \strokec6 >\cf0 \strokec5 0% (0 / 24 Hours)\cf6 \strokec6 </\cf7 \strokec7 span\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 <!-- Progress Bar -->\cf0 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf7 \strokec7 div\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "w-full h-3 bg-gray-200 dark:bg-neutral-800 rounded-full overflow-hidden"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 div\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "progress-bar"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "h-full bg-emerald-500 transition-all duration-500 ease-out w-0"\cf6 \strokec6 ></\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\cb3       \cf9 \strokec9 <!-- Quick Filter & View Toggles -->\cf0 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf7 \strokec7 div\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-notion-border dark:border-notion-darkBorder text-xs"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 div\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "flex items-center gap-1 overflow-x-auto py-1"\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "category-filters"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf9 \strokec9 <!-- Dynamically Generated Filters -->\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 div\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "flex items-center gap-2"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 button\cf0 \strokec5  \cf4 \strokec4 onclick\cf6 \strokec6 =\cf8 \strokec8 "clearAllBlocks()"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "text-xs text-rose-500 hover:underline flex items-center gap-1"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf7 \strokec7 i\cf0 \strokec5  \cf4 \strokec4 data-lucide\cf6 \strokec6 =\cf8 \strokec8 "trash-2"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "w-3.5 h-3.5"\cf6 \strokec6 ></\cf7 \strokec7 i\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf7 \strokec7 span\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "btn-reset"\cf6 \strokec6 >\cf0 \strokec5 Reset All\cf6 \strokec6 </\cf7 \strokec7 span\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 </\cf7 \strokec7 button\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\cb3     \cf9 \strokec9 <!-- Add Time Block Modal/Form Toggle -->\cf0 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf7 \strokec7 div\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "flex items-center justify-between"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf7 \strokec7 h2\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "text-sm font-semibold uppercase tracking-wider text-notion-sub dark:text-notion-darkSub flex items-center gap-2"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 i\cf0 \strokec5  \cf4 \strokec4 data-lucide\cf6 \strokec6 =\cf8 \strokec8 "clock"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "w-4 h-4"\cf6 \strokec6 ></\cf7 \strokec7 i\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 span\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "section-schedule"\cf6 \strokec6 >\cf0 \strokec5 24-Hour Schedule Grid\cf6 \strokec6 </\cf7 \strokec7 span\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf7 \strokec7 h2\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf7 \strokec7 button\cf0 \strokec5  \cf4 \strokec4 onclick\cf6 \strokec6 =\cf8 \strokec8 "openAddModal()"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "text-xs font-medium px-2.5 py-1 rounded bg-notion-text text-notion-bg dark:bg-notion-darkText dark:text-notion-darkBg hover:opacity-90 transition flex items-center gap-1"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 i\cf0 \strokec5  \cf4 \strokec4 data-lucide\cf6 \strokec6 =\cf8 \strokec8 "plus"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "w-3.5 h-3.5"\cf6 \strokec6 ></\cf7 \strokec7 i\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 span\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "btn-add"\cf6 \strokec6 >\cf0 \strokec5 Add Block\cf6 \strokec6 </\cf7 \strokec7 span\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf7 \strokec7 button\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\cb3     \cf9 \strokec9 <!-- Time Blocks Grid List -->\cf0 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf7 \strokec7 div\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "timeline-container"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "space-y-2"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3       \cf9 \strokec9 <!-- Blocks will be rendered here dynamically -->\cf0 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\cb3   \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\cb3   \cf9 \strokec9 <!-- Modal Form for Add/Edit -->\cf0 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf7 \strokec7 div\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "block-modal"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "fixed inset-0 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4 z-50 hidden"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 <\cf7 \strokec7 div\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "bg-notion-bg dark:bg-notion-darkBg border border-notion-border dark:border-notion-darkBorder rounded-xl max-w-md w-full p-5 space-y-4 shadow-xl"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 <\cf7 \strokec7 div\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "flex items-center justify-between border-b border-notion-border dark:border-notion-darkBorder pb-3"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 h3\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "modal-title"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "font-bold text-base"\cf6 \strokec6 >\cf0 \strokec5 Add / Edit Time Block\cf6 \strokec6 </\cf7 \strokec7 h3\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 button\cf0 \strokec5  \cf4 \strokec4 onclick\cf6 \strokec6 =\cf8 \strokec8 "closeModal()"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "text-notion-sub hover:text-notion-text dark:hover:text-notion-darkText"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 i\cf0 \strokec5  \cf4 \strokec4 data-lucide\cf6 \strokec6 =\cf8 \strokec8 "x"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "w-5 h-5"\cf6 \strokec6 ></\cf7 \strokec7 i\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf7 \strokec7 button\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\cb3       \cf6 \strokec6 <\cf7 \strokec7 form\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "block-form"\cf0 \strokec5  \cf4 \strokec4 onsubmit\cf6 \strokec6 =\cf8 \strokec8 "handleFormSubmit(event)"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "space-y-3 text-xs"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 input\cf0 \strokec5  \cf4 \strokec4 type\cf6 \strokec6 =\cf8 \strokec8 "hidden"\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "form-id"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 label\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "block font-medium mb-1"\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "lbl-time-slot"\cf6 \strokec6 >\cf0 \strokec5 Time Slot (Hour 00:00 - 23:00)\cf6 \strokec6 </\cf7 \strokec7 label\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 div\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "grid grid-cols-2 gap-2"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf7 \strokec7 select\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "form-start"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "w-full p-2 rounded border border-notion-border dark:border-notion-darkBorder bg-notion-card dark:bg-notion-darkCard text-notion-text dark:text-notion-darkText"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3               \cf9 \strokec9 <!-- Options 00:00 to 23:00 -->\cf0 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 </\cf7 \strokec7 select\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf7 \strokec7 select\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "form-end"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "w-full p-2 rounded border border-notion-border dark:border-notion-darkBorder bg-notion-card dark:bg-notion-darkCard text-notion-text dark:text-notion-darkText"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3               \cf9 \strokec9 <!-- Options 01:00 to 24:00 -->\cf0 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 </\cf7 \strokec7 select\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 label\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "block font-medium mb-1"\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "lbl-title-en"\cf6 \strokec6 >\cf0 \strokec5 Activity Title (English)\cf6 \strokec6 </\cf7 \strokec7 label\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 input\cf0 \strokec5  \cf4 \strokec4 type\cf6 \strokec6 =\cf8 \strokec8 "text"\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "form-title-en"\cf0 \strokec5  \cf4 \strokec4 required\cf0 \strokec5  \cf4 \strokec4 placeholder\cf6 \strokec6 =\cf8 \strokec8 "e.g. Qiyamul Lail & Tahajjud"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "w-full p-2 rounded border border-notion-border dark:border-notion-darkBorder bg-notion-card dark:bg-notion-darkCard text-notion-text dark:text-notion-darkText"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 label\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "block font-medium mb-1"\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "lbl-title-id"\cf6 \strokec6 >\cf0 \strokec5 Activity Title (Bahasa Indonesia)\cf6 \strokec6 </\cf7 \strokec7 label\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 input\cf0 \strokec5  \cf4 \strokec4 type\cf6 \strokec6 =\cf8 \strokec8 "text"\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "form-title-id"\cf0 \strokec5  \cf4 \strokec4 required\cf0 \strokec5  \cf4 \strokec4 placeholder\cf6 \strokec6 =\cf8 \strokec8 "e.g. Tahajud & Istighfar"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "w-full p-2 rounded border border-notion-border dark:border-notion-darkBorder bg-notion-card dark:bg-notion-darkCard text-notion-text dark:text-notion-darkText"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 label\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "block font-medium mb-1"\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "lbl-category"\cf6 \strokec6 >\cf0 \strokec5 Category\cf6 \strokec6 </\cf7 \strokec7 label\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 select\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "form-category"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "w-full p-2 rounded border border-notion-border dark:border-notion-darkBorder bg-notion-card dark:bg-notion-darkCard text-notion-text dark:text-notion-darkText"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf7 \strokec7 option\cf0 \strokec5  \cf4 \strokec4 value\cf6 \strokec6 =\cf8 \strokec8 "worship"\cf6 \strokec6 >
+\f1 \cf0 \strokec5 \uc0\u55356 \u57113 
+\f0  Worship & Sunnah\cf6 \strokec6 </\cf7 \strokec7 option\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf7 \strokec7 option\cf0 \strokec5  \cf4 \strokec4 value\cf6 \strokec6 =\cf8 \strokec8 "work"\cf6 \strokec6 >
+\f1 \cf0 \strokec5 \uc0\u55357 \u56508 
+\f0  Deep Work & Office\cf6 \strokec6 </\cf7 \strokec7 option\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf7 \strokec7 option\cf0 \strokec5  \cf4 \strokec4 value\cf6 \strokec6 =\cf8 \strokec8 "learning"\cf6 \strokec6 >
+\f1 \cf0 \strokec5 \uc0\u55357 \u56960 
+\f0  Learning & Side Hustle\cf6 \strokec6 </\cf7 \strokec7 option\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf7 \strokec7 option\cf0 \strokec5  \cf4 \strokec4 value\cf6 \strokec6 =\cf8 \strokec8 "health"\cf6 \strokec6 >
+\f1 \cf0 \strokec5 \uc0\u55357 \u56490 
+\f0  Health & Rest\cf6 \strokec6 </\cf7 \strokec7 option\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3             \cf6 \strokec6 <\cf7 \strokec7 option\cf0 \strokec5  \cf4 \strokec4 value\cf6 \strokec6 =\cf8 \strokec8 "family"\cf6 \strokec6 >
+\f1 \cf0 \strokec5 \uc0\u55356 \u57313 
+\f0  Personal & Family\cf6 \strokec6 </\cf7 \strokec7 option\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 </\cf7 \strokec7 select\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 label\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "block font-medium mb-1"\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "lbl-note"\cf6 \strokec6 >\cf0 \strokec5 Notes / Key Objectives\cf6 \strokec6 </\cf7 \strokec7 label\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 textarea\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "form-note"\cf0 \strokec5  \cf4 \strokec4 rows\cf6 \strokec6 =\cf8 \strokec8 "2"\cf0 \strokec5  \cf4 \strokec4 placeholder\cf6 \strokec6 =\cf8 \strokec8 "Sub-tasks, Surah to recite, or office deliverables..."\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "w-full p-2 rounded border border-notion-border dark:border-notion-darkBorder bg-notion-card dark:bg-notion-darkCard text-notion-text dark:text-notion-darkText"\cf6 \strokec6 ></\cf7 \strokec7 textarea\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\cb3         \cf6 \strokec6 <\cf7 \strokec7 div\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "flex justify-end gap-2 pt-2 border-t border-notion-border dark:border-notion-darkBorder"\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 button\cf0 \strokec5  \cf4 \strokec4 type\cf6 \strokec6 =\cf8 \strokec8 "button"\cf0 \strokec5  \cf4 \strokec4 onclick\cf6 \strokec6 =\cf8 \strokec8 "closeModal()"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "px-3 py-1.5 rounded border border-notion-border dark:border-notion-darkBorder hover:bg-gray-200 dark:hover:bg-neutral-800"\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "btn-cancel"\cf6 \strokec6 >\cf0 \strokec5 Cancel\cf6 \strokec6 </\cf7 \strokec7 button\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3           \cf6 \strokec6 <\cf7 \strokec7 button\cf0 \strokec5  \cf4 \strokec4 type\cf6 \strokec6 =\cf8 \strokec8 "submit"\cf0 \strokec5  \cf4 \strokec4 class\cf6 \strokec6 =\cf8 \strokec8 "px-3 py-1.5 rounded bg-emerald-600 text-white font-medium hover:bg-emerald-700"\cf0 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf8 \strokec8 "btn-save"\cf6 \strokec6 >\cf0 \strokec5 Save Block\cf6 \strokec6 </\cf7 \strokec7 button\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3         \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3       \cf6 \strokec6 </\cf7 \strokec7 form\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3     \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 </\cf7 \strokec7 div\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\
+\cb3   \cf6 \strokec6 <\cf7 \strokec7 script\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cb3     \cf9 \strokec9 // --- Data State & Config ---\cf0 \cb1 \strokec5 \
+\cb3     \cf8 \strokec8 let\cf0 \strokec5  currentLang = localStorage.getItem(\cf10 \strokec10 'notion_tb_lang'\cf0 \strokec5 ) || \cf10 \strokec10 'en'\cf0 \strokec5 ;\cb1 \
+\cb3     \cf8 \strokec8 let\cf0 \strokec5  currentFilter = \cf10 \strokec10 'all'\cf0 \strokec5 ;\cb1 \
+\
+\cb3     \cf8 \strokec8 const\cf0 \strokec5  \cf13 \strokec13 CATEGORIES\cf0 \strokec5  = \{\cb1 \
+\cb3       worship: \{\cb1 \
+\cb3         en: \cf10 \strokec10 "Worship & Sunnah"\cf0 \strokec5 ,\cb1 \
+\cb3         id: \cf10 \strokec10 "Ibadah & Sunnah"\cf0 \strokec5 ,\cb1 \
+\cb3         colorBg: \cf10 \strokec10 "bg-emerald-100 dark:bg-emerald-950/50"\cf0 \strokec5 ,\cb1 \
+\cb3         colorText: \cf10 \strokec10 "text-emerald-800 dark:text-emerald-300"\cf0 \strokec5 ,\cb1 \
+\cb3         border: \cf10 \strokec10 "border-emerald-300 dark:border-emerald-800"\cf0 \strokec5 ,\cb1 \
+\cb3         badge: \cf10 \strokec10 "bg-emerald-200 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200"\cf0 \strokec5 ,\cb1 \
+\cb3         icon: \cf10 \strokec10 "moon"\cf0 \cb1 \strokec5 \
+\cb3       \},\cb1 \
+\cb3       work: \{\cb1 \
+\cb3         en: \cf10 \strokec10 "Deep Work & Office"\cf0 \strokec5 ,\cb1 \
+\cb3         id: \cf10 \strokec10 "Kerja Kantor"\cf0 \strokec5 ,\cb1 \
+\cb3         colorBg: \cf10 \strokec10 "bg-blue-100 dark:bg-blue-950/50"\cf0 \strokec5 ,\cb1 \
+\cb3         colorText: \cf10 \strokec10 "text-blue-800 dark:text-blue-300"\cf0 \strokec5 ,\cb1 \
+\cb3         border: \cf10 \strokec10 "border-blue-300 dark:border-blue-800"\cf0 \strokec5 ,\cb1 \
+\cb3         badge: \cf10 \strokec10 "bg-blue-200 dark:bg-blue-900 text-blue-800 dark:text-blue-200"\cf0 \strokec5 ,\cb1 \
+\cb3         icon: \cf10 \strokec10 "briefcase"\cf0 \cb1 \strokec5 \
+\cb3       \},\cb1 \
+\cb3       learning: \{\cb1 \
+\cb3         en: \cf10 \strokec10 "Learning & Side Hustle"\cf0 \strokec5 ,\cb1 \
+\cb3         id: \cf10 \strokec10 "Belajar & Sampingan"\cf0 \strokec5 ,\cb1 \
+\cb3         colorBg: \cf10 \strokec10 "bg-amber-100 dark:bg-amber-950/50"\cf0 \strokec5 ,\cb1 \
+\cb3         colorText: \cf10 \strokec10 "text-amber-800 dark:text-amber-300"\cf0 \strokec5 ,\cb1 \
+\cb3         border: \cf10 \strokec10 "border-amber-300 dark:border-amber-800"\cf0 \strokec5 ,\cb1 \
+\cb3         badge: \cf10 \strokec10 "bg-amber-200 dark:bg-amber-900 text-amber-800 dark:text-amber-200"\cf0 \strokec5 ,\cb1 \
+\cb3         icon: \cf10 \strokec10 "sparkles"\cf0 \cb1 \strokec5 \
+\cb3       \},\cb1 \
+\cb3       health: \{\cb1 \
+\cb3         en: \cf10 \strokec10 "Health & Rest"\cf0 \strokec5 ,\cb1 \
+\cb3         id: \cf10 \strokec10 "Kesehatan & Istirahat"\cf0 \strokec5 ,\cb1 \
+\cb3         colorBg: \cf10 \strokec10 "bg-purple-100 dark:bg-purple-950/50"\cf0 \strokec5 ,\cb1 \
+\cb3         colorText: \cf10 \strokec10 "text-purple-800 dark:text-purple-300"\cf0 \strokec5 ,\cb1 \
+\cb3         border: \cf10 \strokec10 "border-purple-300 dark:border-purple-800"\cf0 \strokec5 ,\cb1 \
+\cb3         badge: \cf10 \strokec10 "bg-purple-200 dark:bg-purple-900 text-purple-800 dark:text-purple-200"\cf0 \strokec5 ,\cb1 \
+\cb3         icon: \cf10 \strokec10 "heart"\cf0 \cb1 \strokec5 \
+\cb3       \},\cb1 \
+\cb3       family: \{\cb1 \
+\cb3         en: \cf10 \strokec10 "Personal & Family"\cf0 \strokec5 ,\cb1 \
+\cb3         id: \cf10 \strokec10 "Keluarga & Pribadi"\cf0 \strokec5 ,\cb1 \
+\cb3         colorBg: \cf10 \strokec10 "bg-rose-100 dark:bg-rose-950/50"\cf0 \strokec5 ,\cb1 \
+\cb3         colorText: \cf10 \strokec10 "text-rose-800 dark:text-rose-300"\cf0 \strokec5 ,\cb1 \
+\cb3         border: \cf10 \strokec10 "border-rose-300 dark:border-rose-800"\cf0 \strokec5 ,\cb1 \
+\cb3         badge: \cf10 \strokec10 "bg-rose-200 dark:bg-rose-900 text-rose-800 dark:text-rose-200"\cf0 \strokec5 ,\cb1 \
+\cb3         icon: \cf10 \strokec10 "home"\cf0 \cb1 \strokec5 \
+\cb3       \}\cb1 \
+\cb3     \};\cb1 \
+\
+\cb3     \cf9 \strokec9 // Default Sunnah & Professional Preset Routine\cf0 \cb1 \strokec5 \
+\cb3     \cf8 \strokec8 const\cf0 \strokec5  \cf13 \strokec13 SUNNAH_PRESET\cf0 \strokec5  = [\cb1 \
+\cb3       \{ id: \cf10 \strokec10 '1'\cf0 \strokec5 , start: \cf12 \strokec12 3\cf0 \strokec5 , end: \cf12 \strokec12 4\cf0 \strokec5 , titleEn: \cf10 \strokec10 'Qiyamul Lail, Suhoor & Istighfar'\cf0 \strokec5 , titleId: \cf10 \strokec10 'Tahajud, Sahur & Istighfar'\cf0 \strokec5 , category: \cf10 \strokec10 'worship'\cf0 \strokec5 , note: \cf10 \strokec10 'Pray Tahajjud, make dua before Fajr'\cf0 \strokec5 , completed: \cf8 \strokec8 false\cf0 \strokec5  \},\cb1 \
+\cb3       \{ id: \cf10 \strokec10 '2'\cf0 \strokec5 , start: \cf12 \strokec12 4\cf0 \strokec5 , end: \cf12 \strokec12 5\cf0 \strokec5 , titleEn: \cf10 \strokec10 'Fajr Prayer & Morning Adhkar'\cf0 \strokec5 , titleId: \cf10 \strokec10 'Shalat Subuh & Dzikir Pagi'\cf0 \strokec5 , category: \cf10 \strokec10 'worship'\cf0 \strokec5 , note: \cf10 \strokec10 'Pray Fajr in congregation & recite morning dhikr'\cf0 \strokec5 , completed: \cf8 \strokec8 false\cf0 \strokec5  \},\cb1 \
+\cb3       \{ id: \cf10 \strokec10 '3'\cf0 \strokec5 , start: \cf12 \strokec12 5\cf0 \strokec5 , end: \cf12 \strokec12 6\cf0 \strokec5 , titleEn: \cf10 \strokec10 'Morning Exercise & Shower'\cf0 \strokec5 , titleId: \cf10 \strokec10 'Olahraga Pagi & Mandi'\cf0 \strokec5 , category: \cf10 \strokec10 'health'\cf0 \strokec5 , note: \cf10 \strokec10 'Light cardio / stretching & prep for day'\cf0 \strokec5 , completed: \cf8 \strokec8 false\cf0 \strokec5  \},\cb1 \
+\cb3       \{ id: \cf10 \strokec10 '4'\cf0 \strokec5 , start: \cf12 \strokec12 6\cf0 \strokec5 , end: \cf12 \strokec12 7\cf0 \strokec5 , titleEn: \cf10 \strokec10 'Commute & Language Practice'\cf0 \strokec5 , titleId: \cf10 \strokec10 'Perjalanan & Belajar Bahasa'\cf0 \strokec5 , category: \cf10 \strokec10 'learning'\cf0 \strokec5 , note: \cf10 \strokec10 'Listen to vocabulary drills / podcasts during commute'\cf0 \strokec5 , completed: \cf8 \strokec8 false\cf0 \strokec5  \},\cb1 \
+\cb3       \{ id: \cf10 \strokec10 '5'\cf0 \strokec5 , start: \cf12 \strokec12 7\cf0 \strokec5 , end: \cf12 \strokec12 8\cf0 \strokec5 , titleEn: \cf10 \strokec10 'Workplace Prep & Planning'\cf0 \strokec5 , titleId: \cf10 \strokec10 'Persiapan Kerja & Skala Prioritas'\cf0 \strokec5 , category: \cf10 \strokec10 'work'\cf0 \strokec5 , note: \cf10 \strokec10 'Arrive early, review daily priorities'\cf0 \strokec5 , completed: \cf8 \strokec8 false\cf0 \strokec5  \},\cb1 \
+\cb3       \{ id: \cf10 \strokec10 '6'\cf0 \strokec5 , start: \cf12 \strokec12 8\cf0 \strokec5 , end: \cf12 \strokec12 10\cf0 \strokec5 , titleEn: \cf10 \strokec10 'Deep Work Session 1'\cf0 \strokec5 , titleId: \cf10 \strokec10 'Kerja Fokus Sesi 1'\cf0 \strokec5 , category: \cf10 \strokec10 'work'\cf0 \strokec5 , note: \cf10 \strokec10 'High priority office tasks without distraction'\cf0 \strokec5 , completed: \cf8 \strokec8 false\cf0 \strokec5  \},\cb1 \
+\cb3       \{ id: \cf10 \strokec10 '7'\cf0 \strokec5 , start: \cf12 \strokec12 10\cf0 \strokec5 , end: \cf12 \strokec12 11\cf0 \strokec5 , titleEn: \cf10 \strokec10 'Morning Break & Duha Prayer'\cf0 \strokec5 , titleId: \cf10 \strokec10 'Istirahat & Shalat Dhuha'\cf0 \strokec5 , category: \cf10 \strokec10 'worship'\cf0 \strokec5 , note: \cf10 \strokec10 '2-8 rakat Duha prayer & coffee break'\cf0 \strokec5 , completed: \cf8 \strokec8 false\cf0 \strokec5  \},\cb1 \
+\cb3       \{ id: \cf10 \strokec10 '8'\cf0 \strokec5 , start: \cf12 \strokec12 11\cf0 \strokec5 , end: \cf12 \strokec12 12\cf0 \strokec5 , titleEn: \cf10 \strokec10 'Deep Work Session 2'\cf0 \strokec5 , titleId: \cf10 \strokec10 'Kerja Fokus Sesi 2'\cf0 \strokec5 , category: \cf10 \strokec10 'work'\cf0 \strokec5 , note: \cf10 \strokec10 'Secondary office tasks, emails & meetings'\cf0 \strokec5 , completed: \cf8 \strokec8 false\cf0 \strokec5  \},\cb1 \
+\cb3       \{ id: \cf10 \strokec10 '9'\cf0 \strokec5 , start: \cf12 \strokec12 12\cf0 \strokec5 , end: \cf12 \strokec12 13\cf0 \strokec5 , titleEn: \cf10 \strokec10 'Dhuhr Prayer, Lunch & Qailulah Nap'\cf0 \strokec5 , titleId: \cf10 \strokec10 'Dzuhur, Makan Siang & Qailulah'\cf0 \strokec5 , category: \cf10 \strokec10 'health'\cf0 \strokec5 , note: \cf10 \strokec10 '15-20 mins power nap sunnah for mid-day energy'\cf0 \strokec5 , completed: \cf8 \strokec8 false\cf0 \strokec5  \},\cb1 \
+\cb3       \{ id: \cf10 \strokec10 '10'\cf0 \strokec5 , start: \cf12 \strokec12 13\cf0 \strokec5 , end: \cf12 \strokec12 15\cf0 \strokec5 , titleEn: \cf10 \strokec10 'Office Admin & Collaboration'\cf0 \strokec5 , titleId: \cf10 \strokec10 'Kerja Administrasi & Rapat Tim'\cf0 \strokec5 , category: \cf10 \strokec10 'work'\cf0 \strokec5 , note: \cf10 \strokec10 'Meetings, team sync & execution'\cf0 \strokec5 , completed: \cf8 \strokec8 false\cf0 \strokec5  \},\cb1 \
+\cb3       \{ id: \cf10 \strokec10 '11'\cf0 \strokec5 , start: \cf12 \strokec12 15\cf0 \strokec5 , end: \cf12 \strokec12 16\cf0 \strokec5 , titleEn: \cf10 \strokec10 'Asr Prayer & Evening Adhkar'\cf0 \strokec5 , titleId: \cf10 \strokec10 'Shalat Ashar & Dzikir Petang'\cf0 \strokec5 , category: \cf10 \strokec10 'worship'\cf0 \strokec5 , note: \cf10 \strokec10 'Pray Asr on time & read evening adhkar'\cf0 \strokec5 , completed: \cf8 \strokec8 false\cf0 \strokec5  \},\cb1 \
+\cb3       \{ id: \cf10 \strokec10 '12'\cf0 \strokec5 , start: \cf12 \strokec12 16\cf0 \strokec5 , end: \cf12 \strokec12 18\cf0 \strokec5 , titleEn: \cf10 \strokec10 'Wrap-up & Commute Home'\cf0 \strokec5 , titleId: \cf10 \strokec10 'Selesai Kerja & Perjalanan Pulang'\cf0 \strokec5 , category: \cf10 \strokec10 'health'\cf0 \strokec5 , note: \cf10 \strokec10 'Review daily checklist before leaving office'\cf0 \strokec5 , completed: \cf8 \strokec8 false\cf0 \strokec5  \},\cb1 \
+\cb3       \{ id: \cf10 \strokec10 '13'\cf0 \strokec5 , start: \cf12 \strokec12 18\cf0 \strokec5 , end: \cf12 \strokec12 19\cf0 \strokec5 , titleEn: \cf10 \strokec10 'Maghrib, Tilawah & Family Dinner'\cf0 \strokec5 , titleId: \cf10 \strokec10 'Maghrib, Tilawah & Makan Malam'\cf0 \strokec5 , category: \cf10 \strokec10 'family'\cf0 \strokec5 , note: \cf10 \strokec10 'Read 1 page Al-Quran & quality family time'\cf0 \strokec5 , completed: \cf8 \strokec8 false\cf0 \strokec5  \},\cb1 \
+\cb3       \{ id: \cf10 \strokec10 '14'\cf0 \strokec5 , start: \cf12 \strokec12 19\cf0 \strokec5 , end: \cf12 \strokec12 20\cf0 \strokec5 , titleEn: \cf10 \strokec10 'Isha Prayer & Night Prep'\cf0 \strokec5 , titleId: \cf10 \strokec10 'Shalat Isya & Persiapan Sesi Malam'\cf0 \strokec5 , category: \cf10 \strokec10 'worship'\cf0 \strokec5 , note: \cf10 \strokec10 'Pray Isha in congregation'\cf0 \strokec5 , completed: \cf8 \strokec8 false\cf0 \strokec5  \},\cb1 \
+\cb3       \{ id: \cf10 \strokec10 '15'\cf0 \strokec5 , start: \cf12 \strokec12 20\cf0 \strokec5 , end: \cf12 \strokec12 21\cf0 \strokec5 , titleEn: \cf10 \strokec10 'Content Creation / Side Hustle'\cf0 \strokec5 , titleId: \cf10 \strokec10 'Bikin Konten / Proyek Sampingan'\cf0 \strokec5 , category: \cf10 \strokec10 'learning'\cf0 \strokec5 , note: \cf10 \strokec10 'Scriptwriting, video editing, or freelance projects'\cf0 \strokec5 , completed: \cf8 \strokec8 false\cf0 \strokec5  \},\cb1 \
+\cb3       \{ id: \cf10 \strokec10 '16'\cf0 \strokec5 , start: \cf12 \strokec12 21\cf0 \strokec5 , end: \cf12 \strokec12 22\cf0 \strokec5 , titleEn: \cf10 \strokec10 'Sunnah Night Routine & Sleep'\cf0 \strokec5 , titleId: \cf10 \strokec10 'Adab Tidur Sunnah & Istirahat'\cf0 \strokec5 , category: \cf10 \strokec10 'health'\cf0 \strokec5 , note: \cf10 \strokec10 'Wudu, Surah Al-Mulk, sleep on right side by 21:30'\cf0 \strokec5 , completed: \cf8 \strokec8 false\cf0 \strokec5  \},\cb1 \
+\cb3     ];\cb1 \
+\
+\cb3     \cf8 \strokec8 let\cf0 \strokec5  timeBlocks = \cf13 \strokec13 JSON\cf0 \strokec5 .parse(localStorage.getItem(\cf10 \strokec10 'notion_tb_blocks'\cf0 \strokec5 )) || \cf13 \strokec13 SUNNAH_PRESET\cf0 \strokec5 ;\cb1 \
+\
+\cb3     \cf9 \strokec9 // --- Initialization ---\cf0 \cb1 \strokec5 \
+\cb3     window.onload = \cf8 \strokec8 function\cf0 \strokec5 () \{\cb1 \
+\cb3       initTheme();\cb1 \
+\cb3       populateTimeDropdowns();\cb1 \
+\cb3       renderCategoryFilters();\cb1 \
+\cb3       renderTimeline();\cb1 \
+\cb3       updateLanguageTexts();\cb1 \
+\cb3       lucide.createIcons();\cb1 \
+\cb3     \};\cb1 \
+\
+\cb3     \cf9 \strokec9 // --- Theme Management ---\cf0 \cb1 \strokec5 \
+\cb3     \cf8 \strokec8 function\cf0 \strokec5  initTheme() \{\cb1 \
+\cb3       \cf8 \strokec8 if\cf0 \strokec5  (localStorage.theme === \cf10 \strokec10 'dark'\cf0 \strokec5  || (!(\cf10 \strokec10 'theme'\cf0 \strokec5  \cf8 \strokec8 in\cf0 \strokec5  localStorage) && window.matchMedia(\cf10 \strokec10 '(prefers-color-scheme: dark)'\cf0 \strokec5 ).matches)) \{\cb1 \
+\cb3         document.documentElement.classList.add(\cf10 \strokec10 'dark'\cf0 \strokec5 );\cb1 \
+\cb3       \} \cf8 \strokec8 else\cf0 \strokec5  \{\cb1 \
+\cb3         document.documentElement.classList.remove(\cf10 \strokec10 'dark'\cf0 \strokec5 );\cb1 \
+\cb3       \}\cb1 \
+\cb3     \}\cb1 \
+\
+\cb3     \cf8 \strokec8 function\cf0 \strokec5  toggleTheme() \{\cb1 \
+\cb3       \cf8 \strokec8 if\cf0 \strokec5  (document.documentElement.classList.contains(\cf10 \strokec10 'dark'\cf0 \strokec5 )) \{\cb1 \
+\cb3         document.documentElement.classList.remove(\cf10 \strokec10 'dark'\cf0 \strokec5 );\cb1 \
+\cb3         localStorage.setItem(\cf10 \strokec10 'theme'\cf0 \strokec5 , \cf10 \strokec10 'light'\cf0 \strokec5 );\cb1 \
+\cb3       \} \cf8 \strokec8 else\cf0 \strokec5  \{\cb1 \
+\cb3         document.documentElement.classList.add(\cf10 \strokec10 'dark'\cf0 \strokec5 );\cb1 \
+\cb3         localStorage.setItem(\cf10 \strokec10 'theme'\cf0 \strokec5 , \cf10 \strokec10 'dark'\cf0 \strokec5 );\cb1 \
+\cb3       \}\cb1 \
+\cb3     \}\cb1 \
+\
+\cb3     \cf9 \strokec9 // --- Language Management ---\cf0 \cb1 \strokec5 \
+\cb3     \cf8 \strokec8 function\cf0 \strokec5  toggleLanguage() \{\cb1 \
+\cb3       currentLang = currentLang === \cf10 \strokec10 'en'\cf0 \strokec5  ? \cf10 \strokec10 'id'\cf0 \strokec5  : \cf10 \strokec10 'en'\cf0 \strokec5 ;\cb1 \
+\cb3       localStorage.setItem(\cf10 \strokec10 'notion_tb_lang'\cf0 \strokec5 , currentLang);\cb1 \
+\cb3       updateLanguageTexts();\cb1 \
+\cb3       renderCategoryFilters();\cb1 \
+\cb3       renderTimeline();\cb1 \
+\cb3     \}\cb1 \
+\
+\cb3     \cf8 \strokec8 function\cf0 \strokec5  updateLanguageTexts() \{\cb1 \
+\cb3       \cf8 \strokec8 const\cf0 \strokec5  isEn = currentLang === \cf10 \strokec10 'en'\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'app-title'\cf0 \strokec5 ).textContent = isEn ? \cf10 \strokec10 "24-Hour Time-Blocker"\cf0 \strokec5  : \cf10 \strokec10 "24-Jam Time-Blocker"\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'app-subtitle'\cf0 \strokec5 ).textContent = isEn ? \cf10 \strokec10 "Sunnah-inspired & professional daily productivity tracker for Notion."\cf0 \strokec5  : \cf10 \strokec10 "Jadwal harian berbasis sunnah & produktivitas profesional untuk Notion."\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'btn-preset'\cf0 \strokec5 ).textContent = isEn ? \cf10 \strokec10 "Load Sunnah Routine"\cf0 \strokec5  : \cf10 \strokec10 "Muat Rutinitas Sunnah"\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'progress-title'\cf0 \strokec5 ).textContent = isEn ? \cf10 \strokec10 "Daily Completion Progress"\cf0 \strokec5  : \cf10 \strokec10 "Kemajuan Progres Harian"\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'section-schedule'\cf0 \strokec5 ).textContent = isEn ? \cf10 \strokec10 "24-Hour Schedule Grid"\cf0 \strokec5  : \cf10 \strokec10 "Jadwal 24 Jam"\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'btn-add'\cf0 \strokec5 ).textContent = isEn ? \cf10 \strokec10 "Add Block"\cf0 \strokec5  : \cf10 \strokec10 "Tambah Blok"\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'btn-reset'\cf0 \strokec5 ).textContent = isEn ? \cf10 \strokec10 "Reset All"\cf0 \strokec5  : \cf10 \strokec10 "Reset Semua"\cf0 \strokec5 ;\cb1 \
+\
+\cb3       \cf9 \strokec9 // Modal\cf0 \cb1 \strokec5 \
+\cb3       document.getElementById(\cf10 \strokec10 'lbl-time-slot'\cf0 \strokec5 ).textContent = isEn ? \cf10 \strokec10 "Time Slot (Hour 00:00 - 24:00)"\cf0 \strokec5  : \cf10 \strokec10 "Slot Waktu (Jam 00:00 - 24:00)"\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'lbl-title-en'\cf0 \strokec5 ).textContent = isEn ? \cf10 \strokec10 "Activity Title (English)"\cf0 \strokec5  : \cf10 \strokec10 "Judul Aktivitas (Bahasa Inggris)"\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'lbl-title-id'\cf0 \strokec5 ).textContent = isEn ? \cf10 \strokec10 "Activity Title (Bahasa Indonesia)"\cf0 \strokec5  : \cf10 \strokec10 "Judul Aktivitas (Bahasa Indonesia)"\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'lbl-category'\cf0 \strokec5 ).textContent = isEn ? \cf10 \strokec10 "Category"\cf0 \strokec5  : \cf10 \strokec10 "Kategori"\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'lbl-note'\cf0 \strokec5 ).textContent = isEn ? \cf10 \strokec10 "Notes / Objectives"\cf0 \strokec5  : \cf10 \strokec10 "Catatan / Target"\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'btn-cancel'\cf0 \strokec5 ).textContent = isEn ? \cf10 \strokec10 "Cancel"\cf0 \strokec5  : \cf10 \strokec10 "Batal"\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'btn-save'\cf0 \strokec5 ).textContent = isEn ? \cf10 \strokec10 "Save Block"\cf0 \strokec5  : \cf10 \strokec10 "Simpan"\cf0 \strokec5 ;\cb1 \
+\cb3     \}\cb1 \
+\
+\cb3     \cf9 \strokec9 // --- Render Logic ---\cf0 \cb1 \strokec5 \
+\cb3     \cf8 \strokec8 function\cf0 \strokec5  renderCategoryFilters() \{\cb1 \
+\cb3       \cf8 \strokec8 const\cf0 \strokec5  container = document.getElementById(\cf10 \strokec10 'category-filters'\cf0 \strokec5 );\cb1 \
+\cb3       \cf8 \strokec8 const\cf0 \strokec5  isEn = currentLang === \cf10 \strokec10 'en'\cf0 \strokec5 ;\cb1 \
+\cb3       \cb1 \
+\cb3       \cf8 \strokec8 let\cf0 \strokec5  html = \cf10 \strokec10 `\cf0 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf10 \cb3 \strokec10         <button onclick="setFilter('all')" class="px-2.5 py-1 rounded-md transition \cf0 \strokec5 $\{currentFilter === \cf10 \strokec10 'all'\cf0 \strokec5  ? \cf10 \strokec10 'bg-notion-text text-notion-bg dark:bg-notion-darkText dark:text-notion-darkBg font-semibold'\cf0 \strokec5  : \cf10 \strokec10 'bg-notion-bg dark:bg-notion-darkBg border border-notion-border dark:border-notion-darkBorder text-notion-sub'\cf0 \strokec5 \}\cf10 \strokec10 ">\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10           \cf0 \strokec5 $\{isEn ? \cf10 \strokec10 'All Categories'\cf0 \strokec5  : \cf10 \strokec10 'Semua'\cf0 \strokec5 \}\cb1 \
+\cf10 \cb3 \strokec10         </button>\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10       `\cf0 \strokec5 ;\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3       \cf13 \strokec13 Object\cf0 \strokec5 .keys(\cf13 \strokec13 CATEGORIES\cf0 \strokec5 ).forEach(catKey => \{\cb1 \
+\cb3         \cf8 \strokec8 const\cf0 \strokec5  cat = \cf13 \strokec13 CATEGORIES\cf0 \strokec5 [catKey];\cb1 \
+\cb3         \cf8 \strokec8 const\cf0 \strokec5  isActive = currentFilter === catKey;\cb1 \
+\cb3         html += \cf10 \strokec10 `\cf0 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf10 \cb3 \strokec10           <button onclick="setFilter('\cf0 \strokec5 $\{catKey\}\cf10 \strokec10 ')" class="px-2.5 py-1 rounded-md border text-xs font-medium transition flex items-center gap-1 \cf0 \strokec5 $\{isActive ? cat.badge + \cf10 \strokec10 ' border-transparent'\cf0 \strokec5  : \cf10 \strokec10 'bg-notion-bg dark:bg-notion-darkBg border-notion-border dark:border-notion-darkBorder text-notion-sub'\cf0 \strokec5 \}\cf10 \strokec10 ">\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10             <span>\cf0 \strokec5 $\{cat[currentLang]\}\cf10 \strokec10 </span>\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10           </button>\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10         `\cf0 \strokec5 ;\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3       \});\cb1 \
+\
+\cb3       container.innerHTML = html;\cb1 \
+\cb3     \}\cb1 \
+\
+\cb3     \cf8 \strokec8 function\cf0 \strokec5  setFilter(category) \{\cb1 \
+\cb3       currentFilter = category;\cb1 \
+\cb3       renderCategoryFilters();\cb1 \
+\cb3       renderTimeline();\cb1 \
+\cb3     \}\cb1 \
+\
+\cb3     \cf8 \strokec8 function\cf0 \strokec5  renderTimeline() \{\cb1 \
+\cb3       \cf8 \strokec8 const\cf0 \strokec5  container = document.getElementById(\cf10 \strokec10 'timeline-container'\cf0 \strokec5 );\cb1 \
+\cb3       container.innerHTML = \cf10 \strokec10 ''\cf0 \strokec5 ;\cb1 \
+\
+\cb3       \cf9 \strokec9 // Sort blocks by start time\cf0 \cb1 \strokec5 \
+\cb3       \cf8 \strokec8 let\cf0 \strokec5  sortedBlocks = [...timeBlocks].sort((a, b) => a.start - b.start);\cb1 \
+\
+\cb3       \cf8 \strokec8 if\cf0 \strokec5  (currentFilter !== \cf10 \strokec10 'all'\cf0 \strokec5 ) \{\cb1 \
+\cb3         sortedBlocks = sortedBlocks.filter(b => b.category === currentFilter);\cb1 \
+\cb3       \}\cb1 \
+\
+\cb3       \cf8 \strokec8 if\cf0 \strokec5  (sortedBlocks.length === \cf12 \strokec12 0\cf0 \strokec5 ) \{\cb1 \
+\cb3         container.innerHTML = \cf10 \strokec10 `\cf0 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf10 \cb3 \strokec10           <div class="p-8 text-center text-notion-sub dark:text-notion-darkSub border border-dashed border-notion-border dark:border-notion-darkBorder rounded-xl">\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10             <i data-lucide="calendar-x" class="w-8 h-8 mx-auto mb-2 opacity-50"></i>\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10             <p>\cf0 \strokec5 $\{currentLang === \cf10 \strokec10 'en'\cf0 \strokec5  ? \cf10 \strokec10 'No time blocks found for this category.'\cf0 \strokec5  : \cf10 \strokec10 'Tidak ada blok waktu untuk kategori ini.'\cf0 \strokec5 \}\cf10 \strokec10 </p>\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10           </div>\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10         `\cf0 \strokec5 ;\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3         updateProgressBar();\cb1 \
+\cb3         lucide.createIcons();\cb1 \
+\cb3         \cf8 \strokec8 return\cf0 \strokec5 ;\cb1 \
+\cb3       \}\cb1 \
+\
+\cb3       \cf8 \strokec8 const\cf0 \strokec5  currentHour = \cf8 \strokec8 new\cf0 \strokec5  \cf13 \strokec13 Date\cf0 \strokec5 ().getHours();\cb1 \
+\
+\cb3       sortedBlocks.forEach(block => \{\cb1 \
+\cb3         \cf8 \strokec8 const\cf0 \strokec5  cat = \cf13 \strokec13 CATEGORIES\cf0 \strokec5 [block.category] || \cf13 \strokec13 CATEGORIES\cf0 \strokec5 .work;\cb1 \
+\cb3         \cf8 \strokec8 const\cf0 \strokec5  isEn = currentLang === \cf10 \strokec10 'en'\cf0 \strokec5 ;\cb1 \
+\cb3         \cf8 \strokec8 const\cf0 \strokec5  title = isEn ? block.titleEn : block.titleId;\cb1 \
+\cb3         \cf8 \strokec8 const\cf0 \strokec5  isCurrentHour = currentHour >= block.start && currentHour < block.end;\cb1 \
+\
+\cb3         \cf8 \strokec8 const\cf0 \strokec5  timeString = \cf10 \strokec10 `\cf0 \strokec5 $\{formatHour(block.start)\}\cf10 \strokec10  - \cf0 \strokec5 $\{formatHour(block.end)\}\cf10 \strokec10 `\cf0 \strokec5 ;\cb1 \
+\cb3         \cf8 \strokec8 const\cf0 \strokec5  duration = block.end - block.start;\cb1 \
+\
+\cb3         \cf8 \strokec8 const\cf0 \strokec5  card = document.createElement(\cf10 \strokec10 'div'\cf0 \strokec5 );\cb1 \
+\cb3         card.className = \cf10 \strokec10 `p-3.5 rounded-xl border transition-all flex flex-col md:flex-row md:items-center justify-between gap-3 \cf0 \strokec5 $\{\cb1 \
+\cb3           block.completed \cb1 \
+\cb3             ? \cf10 \strokec10 'opacity-65 bg-gray-50 dark:bg-neutral-900 border-notion-border dark:border-notion-darkBorder'\cf0 \strokec5  \cb1 \
+\cb3             : isCurrentHour \cb1 \
+\cb3             ? \cf10 \strokec10 'ring-2 ring-emerald-500/50 '\cf0 \strokec5  + cat.colorBg + \cf10 \strokec10 ' '\cf0 \strokec5  + cat.border\cb1 \
+\cb3             : \cf10 \strokec10 'bg-notion-card dark:bg-notion-darkCard border-notion-border dark:border-notion-darkBorder hover:border-gray-300 dark:hover:border-neutral-700'\cf0 \cb1 \strokec5 \
+\cb3         \}\cf10 \strokec10 `\cf0 \strokec5 ;\cb1 \
+\
+\cb3         card.innerHTML = \cf10 \strokec10 `\cf0 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf10 \cb3 \strokec10           <div class="flex items-start gap-3 flex-1 min-w-0">\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10             <!-- Checkbox Toggle -->\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10             <button onclick="toggleComplete('\cf0 \strokec5 $\{block.id\}\cf10 \strokec10 ')" class="mt-0.5 flex-shrink-0 w-5 h-5 rounded border border-gray-400 dark:border-neutral-600 flex items-center justify-center \cf0 \strokec5 $\{block.completed ? \cf10 \strokec10 'bg-emerald-600 border-emerald-600 text-white'\cf0 \strokec5  : \cf10 \strokec10 'hover:border-emerald-500'\cf0 \strokec5 \}\cf10 \strokec10  transition">\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10               \cf0 \strokec5 $\{block.completed ? \cf10 \strokec10 '<i data-lucide="check" class="w-3.5 h-3.5"></i>'\cf0 \strokec5  : \cf10 \strokec10 ''\cf0 \strokec5 \}\cb1 \
+\cf10 \cb3 \strokec10             </button>\cf0 \cb1 \strokec5 \
+\
+\cf10 \cb3 \strokec10             <!-- Details -->\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10             <div class="space-y-1 min-w-0 flex-1">\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10               <div class="flex flex-wrap items-center gap-2">\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10                 <span class="text-xs font-mono font-bold px-2 py-0.5 rounded bg-gray-200 dark:bg-neutral-800 text-notion-text dark:text-notion-darkText">\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10                   \cf0 \strokec5 $\{timeString\}\cf10 \strokec10  (\cf0 \strokec5 $\{duration\}\cf10 \strokec10 h)\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10                 </span>\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10                 \cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10                 <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full \cf0 \strokec5 $\{cat.badge\}\cf10 \strokec10  flex items-center gap-1">\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10                   <i data-lucide="\cf0 \strokec5 $\{cat.icon\}\cf10 \strokec10 " class="w-3 h-3"></i>\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10                   \cf0 \strokec5 $\{cat[currentLang]\}\cb1 \
+\cf10 \cb3 \strokec10                 </span>\cf0 \cb1 \strokec5 \
+\
+\cf10 \cb3 \strokec10                 \cf0 \strokec5 $\{isCurrentHour ? \cf10 \strokec10 `<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500 text-white animate-pulse">NOW</span>`\cf0 \strokec5  : \cf10 \strokec10 ''\cf0 \strokec5 \}\cb1 \
+\cf10 \cb3 \strokec10               </div>\cf0 \cb1 \strokec5 \
+\
+\cf10 \cb3 \strokec10               <h3 class="font-semibold text-sm \cf0 \strokec5 $\{block.completed ? \cf10 \strokec10 'line-through text-notion-sub dark:text-notion-darkSub'\cf0 \strokec5  : \cf10 \strokec10 ''\cf0 \strokec5 \}\cf10 \strokec10 ">\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10                 \cf0 \strokec5 $\{title\}\cb1 \
+\cf10 \cb3 \strokec10               </h3>\cf0 \cb1 \strokec5 \
+\
+\cf10 \cb3 \strokec10               \cf0 \strokec5 $\{block.note ? \cf10 \strokec10 `<p class="text-xs text-notion-sub dark:text-notion-darkSub line-clamp-2">\cf0 \strokec5 $\{block.note\}\cf10 \strokec10 </p>`\cf0 \strokec5  : \cf10 \strokec10 ''\cf0 \strokec5 \}\cb1 \
+\cf10 \cb3 \strokec10             </div>\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10           </div>\cf0 \cb1 \strokec5 \
+\
+\cf10 \cb3 \strokec10           <!-- Actions -->\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10           <div class="flex items-center gap-1 self-end md:self-center border-t md:border-t-0 pt-2 md:pt-0 border-notion-border dark:border-notion-darkBorder">\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10             <button onclick="openEditModal('\cf0 \strokec5 $\{block.id\}\cf10 \strokec10 ')" class="p-1.5 rounded hover:bg-gray-200 dark:hover:bg-neutral-800 text-notion-sub transition">\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10               <i data-lucide="pencil" class="w-3.5 h-3.5"></i>\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10             </button>\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10             <button onclick="deleteBlock('\cf0 \strokec5 $\{block.id\}\cf10 \strokec10 ')" class="p-1.5 rounded hover:bg-rose-100 dark:hover:bg-rose-950/50 text-rose-500 transition">\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10               <i data-lucide="trash" class="w-3.5 h-3.5"></i>\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10             </button>\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10           </div>\cf0 \cb1 \strokec5 \
+\cf10 \cb3 \strokec10         `\cf0 \strokec5 ;\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb3         container.appendChild(card);\cb1 \
+\cb3       \});\cb1 \
+\
+\cb3       updateProgressBar();\cb1 \
+\cb3       lucide.createIcons();\cb1 \
+\cb3     \}\cb1 \
+\
+\cb3     \cf8 \strokec8 function\cf0 \strokec5  formatHour(h) \{\cb1 \
+\cb3       \cf8 \strokec8 const\cf0 \strokec5  padded = h < \cf12 \strokec12 10\cf0 \strokec5  ? \cf10 \strokec10 '0'\cf0 \strokec5  + h : h;\cb1 \
+\cb3       \cf8 \strokec8 return\cf0 \strokec5  \cf10 \strokec10 `\cf0 \strokec5 $\{padded\}\cf10 \strokec10 :00`\cf0 \strokec5 ;\cb1 \
+\cb3     \}\cb1 \
+\
+\cb3     \cf8 \strokec8 function\cf0 \strokec5  updateProgressBar() \{\cb1 \
+\cb3       \cf8 \strokec8 const\cf0 \strokec5  completedHours = timeBlocks.filter(b => b.completed).reduce((sum, b) => sum + (b.end - b.start), \cf12 \strokec12 0\cf0 \strokec5 );\cb1 \
+\cb3       \cf8 \strokec8 const\cf0 \strokec5  percentage = \cf13 \strokec13 Math\cf0 \strokec5 .min(\cf13 \strokec13 Math\cf0 \strokec5 .round((completedHours / \cf12 \strokec12 24\cf0 \strokec5 ) * \cf12 \strokec12 100\cf0 \strokec5 ), \cf12 \strokec12 100\cf0 \strokec5 );\cb1 \
+\
+\cb3       \cf8 \strokec8 const\cf0 \strokec5  bar = document.getElementById(\cf10 \strokec10 'progress-bar'\cf0 \strokec5 );\cb1 \
+\cb3       \cf8 \strokec8 const\cf0 \strokec5  text = document.getElementById(\cf10 \strokec10 'progress-text'\cf0 \strokec5 );\cb1 \
+\
+\cb3       bar.style.width = \cf10 \strokec10 `\cf0 \strokec5 $\{percentage\}\cf10 \strokec10 %`\cf0 \strokec5 ;\cb1 \
+\cb3       text.textContent = \cf10 \strokec10 `\cf0 \strokec5 $\{percentage\}\cf10 \strokec10 % (\cf0 \strokec5 $\{completedHours\}\cf10 \strokec10  / 24 \cf0 \strokec5 $\{currentLang === \cf10 \strokec10 'en'\cf0 \strokec5  ? \cf10 \strokec10 'Hours'\cf0 \strokec5  : \cf10 \strokec10 'Jam'\cf0 \strokec5 \}\cf10 \strokec10 )`\cf0 \strokec5 ;\cb1 \
+\cb3     \}\cb1 \
+\
+\cb3     \cf9 \strokec9 // --- State Operations ---\cf0 \cb1 \strokec5 \
+\cb3     \cf8 \strokec8 function\cf0 \strokec5  toggleComplete(id) \{\cb1 \
+\cb3       timeBlocks = timeBlocks.map(b => b.id === id ? \{ ...b, completed: !b.completed \} : b);\cb1 \
+\cb3       saveAndRender();\cb1 \
+\cb3     \}\cb1 \
+\
+\cb3     \cf8 \strokec8 function\cf0 \strokec5  deleteBlock(id) \{\cb1 \
+\cb3       \cf8 \strokec8 if\cf0 \strokec5  (confirm(currentLang === \cf10 \strokec10 'en'\cf0 \strokec5  ? \cf10 \strokec10 'Are you sure you want to delete this block?'\cf0 \strokec5  : \cf10 \strokec10 'Apakah Anda yakin ingin menghapus blok ini?'\cf0 \strokec5 )) \{\cb1 \
+\cb3         timeBlocks = timeBlocks.filter(b => b.id !== id);\cb1 \
+\cb3         saveAndRender();\cb1 \
+\cb3       \}\cb1 \
+\cb3     \}\cb1 \
+\
+\cb3     \cf8 \strokec8 function\cf0 \strokec5  clearAllBlocks() \{\cb1 \
+\cb3       \cf8 \strokec8 if\cf0 \strokec5  (confirm(currentLang === \cf10 \strokec10 'en'\cf0 \strokec5  ? \cf10 \strokec10 'Clear all time blocks?'\cf0 \strokec5  : \cf10 \strokec10 'Hapus semua jadwal?'\cf0 \strokec5 )) \{\cb1 \
+\cb3         timeBlocks = [];\cb1 \
+\cb3         saveAndRender();\cb1 \
+\cb3       \}\cb1 \
+\cb3     \}\cb1 \
+\
+\cb3     \cf8 \strokec8 function\cf0 \strokec5  loadSunnahPreset() \{\cb1 \
+\cb3       \cf8 \strokec8 if\cf0 \strokec5  (confirm(currentLang === \cf10 \strokec10 'en'\cf0 \strokec5  ? \cf10 \strokec10 'Replace current schedule with Sunnah & Work routine?'\cf0 \strokec5  : \cf10 \strokec10 'Ganti jadwal saat ini dengan Rutinitas Sunnah & Kerja?'\cf0 \strokec5 )) \{\cb1 \
+\cb3         timeBlocks = [...\cf13 \strokec13 SUNNAH_PRESET\cf0 \strokec5 ];\cb1 \
+\cb3         saveAndRender();\cb1 \
+\cb3       \}\cb1 \
+\cb3     \}\cb1 \
+\
+\cb3     \cf8 \strokec8 function\cf0 \strokec5  saveAndRender() \{\cb1 \
+\cb3       localStorage.setItem(\cf10 \strokec10 'notion_tb_blocks'\cf0 \strokec5 , \cf13 \strokec13 JSON\cf0 \strokec5 .stringify(timeBlocks));\cb1 \
+\cb3       renderTimeline();\cb1 \
+\cb3     \}\cb1 \
+\
+\cb3     \cf9 \strokec9 // --- Modal & Form Handling ---\cf0 \cb1 \strokec5 \
+\cb3     \cf8 \strokec8 function\cf0 \strokec5  populateTimeDropdowns() \{\cb1 \
+\cb3       \cf8 \strokec8 const\cf0 \strokec5  startSelect = document.getElementById(\cf10 \strokec10 'form-start'\cf0 \strokec5 );\cb1 \
+\cb3       \cf8 \strokec8 const\cf0 \strokec5  endSelect = document.getElementById(\cf10 \strokec10 'form-end'\cf0 \strokec5 );\cb1 \
+\cb3       startSelect.innerHTML = \cf10 \strokec10 ''\cf0 \strokec5 ;\cb1 \
+\cb3       endSelect.innerHTML = \cf10 \strokec10 ''\cf0 \strokec5 ;\cb1 \
+\
+\cb3       \cf8 \strokec8 for\cf0 \strokec5  (\cf8 \strokec8 let\cf0 \strokec5  i = \cf12 \strokec12 0\cf0 \strokec5 ; i < \cf12 \strokec12 24\cf0 \strokec5 ; i++) \{\cb1 \
+\cb3         startSelect.innerHTML += \cf10 \strokec10 `<option value="\cf0 \strokec5 $\{i\}\cf10 \strokec10 ">\cf0 \strokec5 $\{formatHour(i)\}\cf10 \strokec10 </option>`\cf0 \strokec5 ;\cb1 \
+\cb3       \}\cb1 \
+\cb3       \cf8 \strokec8 for\cf0 \strokec5  (\cf8 \strokec8 let\cf0 \strokec5  i = \cf12 \strokec12 1\cf0 \strokec5 ; i <= \cf12 \strokec12 24\cf0 \strokec5 ; i++) \{\cb1 \
+\cb3         endSelect.innerHTML += \cf10 \strokec10 `<option value="\cf0 \strokec5 $\{i\}\cf10 \strokec10 ">\cf0 \strokec5 $\{formatHour(i)\}\cf10 \strokec10 </option>`\cf0 \strokec5 ;\cb1 \
+\cb3       \}\cb1 \
+\cb3     \}\cb1 \
+\
+\cb3     \cf8 \strokec8 function\cf0 \strokec5  openAddModal() \{\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'modal-title'\cf0 \strokec5 ).textContent = currentLang === \cf10 \strokec10 'en'\cf0 \strokec5  ? \cf10 \strokec10 'Add Time Block'\cf0 \strokec5  : \cf10 \strokec10 'Tambah Blok Waktu'\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'form-id'\cf0 \strokec5 ).value = \cf10 \strokec10 ''\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'form-start'\cf0 \strokec5 ).value = \cf10 \strokec10 '8'\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'form-end'\cf0 \strokec5 ).value = \cf10 \strokec10 '9'\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'form-title-en'\cf0 \strokec5 ).value = \cf10 \strokec10 ''\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'form-title-id'\cf0 \strokec5 ).value = \cf10 \strokec10 ''\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'form-category'\cf0 \strokec5 ).value = \cf10 \strokec10 'work'\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'form-note'\cf0 \strokec5 ).value = \cf10 \strokec10 ''\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'block-modal'\cf0 \strokec5 ).classList.remove(\cf10 \strokec10 'hidden'\cf0 \strokec5 );\cb1 \
+\cb3     \}\cb1 \
+\
+\cb3     \cf8 \strokec8 function\cf0 \strokec5  openEditModal(id) \{\cb1 \
+\cb3       \cf8 \strokec8 const\cf0 \strokec5  block = timeBlocks.find(b => b.id === id);\cb1 \
+\cb3       \cf8 \strokec8 if\cf0 \strokec5  (!block) \cf8 \strokec8 return\cf0 \strokec5 ;\cb1 \
+\
+\cb3       document.getElementById(\cf10 \strokec10 'modal-title'\cf0 \strokec5 ).textContent = currentLang === \cf10 \strokec10 'en'\cf0 \strokec5  ? \cf10 \strokec10 'Edit Time Block'\cf0 \strokec5  : \cf10 \strokec10 'Edit Blok Waktu'\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'form-id'\cf0 \strokec5 ).value = block.id;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'form-start'\cf0 \strokec5 ).value = block.start;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'form-end'\cf0 \strokec5 ).value = block.end;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'form-title-en'\cf0 \strokec5 ).value = block.titleEn;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'form-title-id'\cf0 \strokec5 ).value = block.titleId;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'form-category'\cf0 \strokec5 ).value = block.category;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'form-note'\cf0 \strokec5 ).value = block.note || \cf10 \strokec10 ''\cf0 \strokec5 ;\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'block-modal'\cf0 \strokec5 ).classList.remove(\cf10 \strokec10 'hidden'\cf0 \strokec5 );\cb1 \
+\cb3     \}\cb1 \
+\
+\cb3     \cf8 \strokec8 function\cf0 \strokec5  closeModal() \{\cb1 \
+\cb3       document.getElementById(\cf10 \strokec10 'block-modal'\cf0 \strokec5 ).classList.add(\cf10 \strokec10 'hidden'\cf0 \strokec5 );\cb1 \
+\cb3     \}\cb1 \
+\
+\cb3     \cf8 \strokec8 function\cf0 \strokec5  handleFormSubmit(e) \{\cb1 \
+\cb3       e.preventDefault();\cb1 \
+\cb3       \cf8 \strokec8 const\cf0 \strokec5  id = document.getElementById(\cf10 \strokec10 'form-id'\cf0 \strokec5 ).value;\cb1 \
+\cb3       \cf8 \strokec8 const\cf0 \strokec5  start = parseInt(document.getElementById(\cf10 \strokec10 'form-start'\cf0 \strokec5 ).value);\cb1 \
+\cb3       \cf8 \strokec8 const\cf0 \strokec5  end = parseInt(document.getElementById(\cf10 \strokec10 'form-end'\cf0 \strokec5 ).value);\cb1 \
+\cb3       \cf8 \strokec8 const\cf0 \strokec5  titleEn = document.getElementById(\cf10 \strokec10 'form-title-en'\cf0 \strokec5 ).value;\cb1 \
+\cb3       \cf8 \strokec8 const\cf0 \strokec5  titleId = document.getElementById(\cf10 \strokec10 'form-title-id'\cf0 \strokec5 ).value;\cb1 \
+\cb3       \cf8 \strokec8 const\cf0 \strokec5  category = document.getElementById(\cf10 \strokec10 'form-category'\cf0 \strokec5 ).value;\cb1 \
+\cb3       \cf8 \strokec8 const\cf0 \strokec5  note = document.getElementById(\cf10 \strokec10 'form-note'\cf0 \strokec5 ).value;\cb1 \
+\
+\cb3       \cf8 \strokec8 if\cf0 \strokec5  (start >= end) \{\cb1 \
+\cb3         alert(currentLang === \cf10 \strokec10 'en'\cf0 \strokec5  ? \cf10 \strokec10 'End time must be after start time!'\cf0 \strokec5  : \cf10 \strokec10 'Waktu selesai harus setelah waktu mulai!'\cf0 \strokec5 );\cb1 \
+\cb3         \cf8 \strokec8 return\cf0 \strokec5 ;\cb1 \
+\cb3       \}\cb1 \
+\
+\cb3       \cf8 \strokec8 if\cf0 \strokec5  (id) \{\cb1 \
+\cb3         \cf9 \strokec9 // Edit existing\cf0 \cb1 \strokec5 \
+\cb3         timeBlocks = timeBlocks.map(b => b.id === id ? \{ ...b, start, end, titleEn, titleId, category, note \} : b);\cb1 \
+\cb3       \} \cf8 \strokec8 else\cf0 \strokec5  \{\cb1 \
+\cb3         \cf9 \strokec9 // Add new\cf0 \cb1 \strokec5 \
+\cb3         \cf8 \strokec8 const\cf0 \strokec5  newBlock = \{\cb1 \
+\cb3           id: \cf13 \strokec13 Date\cf0 \strokec5 .now().toString(),\cb1 \
+\cb3           start,\cb1 \
+\cb3           end,\cb1 \
+\cb3           titleEn,\cb1 \
+\cb3           titleId,\cb1 \
+\cb3           category,\cb1 \
+\cb3           note,\cb1 \
+\cb3           completed: \cf8 \strokec8 false\cf0 \cb1 \strokec5 \
+\cb3         \};\cb1 \
+\cb3         timeBlocks.push(newBlock);\cb1 \
+\cb3       \}\cb1 \
+\
+\cb3       closeModal();\cb1 \
+\cb3       saveAndRender();\cb1 \
+\cb3     \}\cb1 \
+\cb3   \cf6 \strokec6 </\cf7 \strokec7 script\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \strokec6 </\cf7 \strokec7 body\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+\cf6 \cb3 \strokec6 </\cf7 \strokec7 html\cf6 \strokec6 >\cf0 \cb1 \strokec5 \
+}
